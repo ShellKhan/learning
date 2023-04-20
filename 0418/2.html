@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Borders & backgrounds</title>
+        
+        <style>
+            body {
+                margin: 0;
+                padding: 200px;
+            }
+            div {
+                width: 400px;
+                /*width: 0;*/
+                height: 400px;
+                /*height: 0;*/
+                
+                /*background-color: green;*/
+                /*background-image: url('plant.png');*/
+                /*background-image: url('octocat_github.png');
+                background-repeat: no-repeat;
+                background-position: center;*/
+                /*background-size: 50px 200px;*/
+                /*background-size: cover;*/
+                
+                background: url('plant.png') center repeat-x, url('octocat_github.png') center / cover no-repeat, linear-gradient(to right, rgba(255,0,0,.5) 0%, rgba(255,0,0,.5) 10%, rgba(0,0,255,.5) 20%, rgba(0,0,255,.5) 30%, rgba(255,0,0,.5) 70%, rgba(255,0,0,.5) 80%, rgba(0,0,255,.5) 90%, rgba(0,0,255,.5) 100%), #7fff7f;
+                
+                /*border-color: red black green blue;
+                border-width: 5px 10px 7px;
+                border-top-style: solid;
+                border-bottom-style: dotted;
+                border-left-style: dashed;
+                border-right-style: double;*/
+                
+                /*border-style: solid;
+                border-width: 100px 100px 0 0;
+                border-color: red transparent;
+                background-clip: padding-box;*/
+                
+                border: 3px dashed black;
+                /*background: none;*/
+                
+                /*border-radius: 50px 100px 200px / 10px 20px;*/
+                border-radius: 50%;
+                
+                outline: 5px dotted red;
+                
+                box-shadow: 200px -200px 20px 200px rgba(255,0,0,.5), 100px 100px 100px 100px rgba(0,255,0,.5);
+            }
+            p {
+                margin: 0;
+                background: yellow;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div></div>
+        <!-- <p>text text text</p> -->
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Форма в таблице</title>
+        
+        <meta charset="utf-8">
+        
+        <style>
+        td {
+            border-top: 2px solid yellow;
+            border-bottom: 2px solid red;
+            border-left: 2px solid blue;
+            border-right: 2px solid green;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        </style>
+    </head>
+    
+    <body>
+        <form action="#" method="get">
+            <table style="border:1px solid black;width:100%">
+                <tr>
+                    <th>
+                        Форма для примера
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width:100%">
+                            <tr>
+                                <td>
+                                    <input type="radio" name="radio" value="1" id="first">
+                                </td>
+                                <td>
+                                    <label for="first">первая кнопка</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="radio" value="2" id="second">
+                                </td>
+                                <td>
+                                    <label for="second">вторая кнопка</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="radio" value="3" id="third">
+                                </td>
+                                <td>
+                                    <label for="third">третья кнопка</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width:100%">
+                            <tr>
+                                <td>
+                                    <label>Левый комментарий</label>
+                                    <textarea name="left"></textarea>
+                                </td>
+                                <td>
+                                    <label>Правый комментарий</label>
+                                    <textarea name="right"></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width:100%">
+                            <tr>
+                                <td style="text-align:center">
+                                    <label>Выбор варианта</label>
+                                    <select name="myselect">
+                                        <option>первый</option>
+                                        <option>второй</option>
+                                        <option>третий</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <button type="submit">Отправить</button>
+                    </th>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Пример CSS</title>
+        
+        <meta charset="utf-8">
+        
+        <!-- <link href="example.css" rel="stylesheet"> -->
+        
+        <style>
+            #sample { 
+                font-weight: bold;
+                /*color: blue;*/
+                /*color: #00f;*/
+                /*color: rgb(0,0,255);*/
+                color: rgba(0,0,255,1);
+            }
+            #sample.green {
+                color: green;
+            }
+            #sample .thin {
+                font-weight: normal;
+            }
+            
+            .red {
+                font-size: 2em;
+                padding: 2em;
+                width: calc(100% - 200px);
+                border: 1px solid red;
+            }
+         </style> 
+    </head>
+    
+    <body>
+        <div id="sample" style="/*background:yellow;background:green;*/">
+            В <span class="green thick">лесу</span> родилась <span class="green thin">елочка</span>
+        </div>
+        <div class="red">GREEN</div>
+        <div class="green">GREEN</div>
+    </body>
+</html>

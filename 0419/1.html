@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Блочная модель</title>
+        
+        <meta charset="utf-8">
+        
+        <style>
+            div {
+                width: 400px;
+                height: 200px;
+                /*margin: 50px;*/
+            }
+            .first {
+                background: red;
+                box-sizing: border-box;
+                border: 5px dashed black;
+                padding: 20px;
+                color: yellow;
+            }
+            .second {
+                background: green;
+                margin-top: 100px;
+                height: auto;
+            }
+            .inner {
+                width: 100px;
+                height: 100px;
+                background: blue;
+                margin: 200px auto;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="first">Являясь одной из самых распространённых в мире сельскохозяйственных культур, рис занимает главенствующую позицию в национальной кухне сотен народов. В России до XIX века рис называли «сарацинское зерно».</div>
+        
+        <div class="second">
+            <div class="inner"></div>
+            <div class="inner"></div>
+            <div class="inner"></div>
+        </div>
+        
+        <div class="first"></div>
+    </body>
+</html>

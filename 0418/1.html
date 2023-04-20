@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Списки</title>
+        
+        <style>
+            ul {
+                /* list-style-type: circle | disc | square | armenian | decimal | decimal-leading-zero | georgian | lower-alpha | lower-greek | lower-latin | lower-roman | upper-alpha | upper-latin | upper-roman | none */
+                /*list-style-type: disc;
+                list-style-image: url('plant.png');
+                list-style-position: inside;*/
+                
+                /*list-style-type: "===";*/
+                list-style-type: decimal;
+                counter-reset: list;
+                /*list-style-position: inside;*/
+                /*list-style-image: url('plant.png');*/
+            }/*
+            ol {
+                list-style-type: decimal;
+                counter-reset: sublist;
+                list-style-position: outside;
+            }*/
+            ul > li {
+                font: bold 18px/1 Arial;
+                color: #070;
+                counter-increment: list;
+                list-style-image: url('plant.png');
+            }
+            ul > li::marker {
+                /*content: counter(list) " ";*/
+            }
+            ol > li {
+                font: bold 18px/1 Arial;
+                counter-increment: sublist;
+            }
+            ol > li::marker {
+                content: counter(list) "." counter(sublist) " ";
+            }*/
+        </style>
+    </head>
+    
+    <body>
+        <ul>
+            <li>Первый пункт</li>
+            <li>Второй пункт</li>
+            <li>Третий пункт</li>
+            <!-- <li>Четвертый пункт</li> -->
+            <li>Пятый пункт</li>
+            <li>Первый пункт Первый пункт Первый пункт Первый пункт Первый пункт Первый пункт Первый пункт Первый пункт Первый пункт Первый пункт Первый пункт Первый пункт Первый пункт Первый пункт </li>
+            <li>Второй пункт
+                <ol>
+                    <li>Третий пункт</li>
+                    <li>Четвертый пункт</li>
+                    <li>Пятый пункт</li>
+                </ol>
+            </li>
+            <li>Первый пункт</li>
+            <li>Второй пункт</li>
+            <li>Третий пункт</li>
+            <li>Четвертый пункт</li>
+            <li>Пятый пункт</li>
+        </ul>
+    </body>
+</html>

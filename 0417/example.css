@@ -1,0 +1,15 @@
+#sample {
+    width: 200px;
+    height: 300px;
+    background: red;
+}
+
+/* body .text{font:normal 16px Arial,sans‐serif;color:#000;} */
+
+body > div {
+    background: blue !important;
+}
+
+body > div {
+    background: green !important;
+}
