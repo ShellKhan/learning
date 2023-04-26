@@ -3,6 +3,7 @@
     src: url('../fonts/Pacifico-Regular.woff2') format('woff2');
 }
 
+/* basis */
 html {
     height: 100%;
 }
@@ -24,9 +25,33 @@ footer {
 }
 main {
     flex: 1 1 auto;
+    display: flex;
 }
 
+/* footer */
 .copyright {
     font: 20px 'finetext';
     color: rgba(255,255,255,.5);
 }
+
+/* main */
+aside {
+    width: 200px;
+/*    height: 100%;
+    float: left;*/
+    flex: none;
+    background: red;
+}
+article {
+/*    margin-left: 200px;
+    height: 100%;*/
+    flex: 1 1 auto;
+    background: yellow;
+}
+/*
+article::after {
+    clear: left;
+    content: '';
+    display: block;
+}
+*/
