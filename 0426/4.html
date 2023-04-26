@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>GRID</title>
+        
+        <meta charset="utf-8">
+        
+        <style>
+            .pink {
+                background: pink;
+                width: 600px;
+                height: 600px;
+                margin: 100px auto;
+                display: grid;
+                /*grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, 1fr);*/
+                grid-template-areas: "yellow yellow blue" "yellow yellow green" "gray red red2";
+            }
+            div.red {
+                background: red;
+                grid-area: red;
+            }
+            div.green {
+                background: green;
+                grid-area: green;
+            }
+            div.blue {
+                background: blue;
+                grid-area: blue;
+            }
+            div.gray {
+                background: gray;
+                grid-area: gray;
+            }
+            div.yellow {
+                background: yellow;
+                grid-area: yellow;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="pink">
+            <div class="red">x</div>
+            <div class="green">x</div>
+            <div class="blue">x</div>
+            <div class="gray">x</div>
+            <div class="yellow">x</div>
+            <div class="red" style="grid-area:red2">xxx</div>
+        </div>
+    </body>
+</html>
