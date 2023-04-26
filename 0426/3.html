@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>FLEXBOX</title>
+        
+        <meta charset="utf-8">
+        
+        <style>
+            .pink {
+                background: pink;
+                outline: 1px solid black;
+                width: 400px;
+                height: 300px;
+                margin: 100px auto;
+                /*display: flex;
+                flex-wrap: wrap;*/
+            }
+            .table {
+                display: table;
+            }
+            .pink > .tr {
+                display: flex;
+                border: none;
+                height: 50%;
+            }
+            .table > .tr {
+                display: table-row;
+                border: none;
+            }
+            .pink > .tr > div {
+                border: 1px dashed red;
+                flex: 1 1 100px;
+            }
+            .table >.tr > div {
+                display: table-cell;
+                border: 1px dashed red;
+            }
+            div.red {
+                background: red;
+            }
+            div.green {
+                background: green;
+            }
+            div.blue {
+                background: blue;
+            }
+            div.gray {
+                background: gray;
+            }
+            div.yellow {
+                background: yellow;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="pink">
+            <div class="tr">
+                <div class="red">x</div>
+                <div class="green">x</div>
+                <div class="blue" style="flex:none;width:50px;">x</div>
+            </div>
+            <div class="tr">
+                <div class="gray">x</div>
+                <div class="yellow">x</div>
+                <div class="red">x</div>
+            </div>
+        </div>
+        
+        <div class="pink table">
+            <div class="tr">
+                <div class="red">x</div>
+                <div class="green">x</div>
+                <div class="blue" style="width:50px;">x</div>
+            </div>
+            <div class="tr">
+                <div class="gray">x</div>
+                <div class="yellow">x</div>
+                <div class="red">x</div>
+            </div>
+        </div>
+    </body>
+</html>

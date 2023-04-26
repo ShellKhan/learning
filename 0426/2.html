@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>FLEXBOX</title>
+        
+        <meta charset="utf-8">
+        
+        <style>
+            .pink {
+                background: pink;
+                border: 1px solid black;
+                width: 500px;
+                height: 500px;
+                margin: 100px auto;
+                display: flex;
+                /*flex-direction: column;*/
+                align-items: center;
+                justify-content: space-evenly;
+            }
+            .pink > div {
+                padding: 20px;
+                width: 150px;
+                /*flex-grow: 1;
+                flex-shrink: 2;
+                flex-basis: 60px;*/
+                /*flex: 0 1 auto;*/
+                flex: 1 2 60px;
+            }
+            div.red {
+                background: red;
+                order: 2;
+                /*flex-grow: 0;
+                flex-shrink: 0;
+                flex-basis: auto;*/
+                flex: none;
+                align-self: stretch;
+            }
+            div.green {
+                background: green;
+                order: 0;
+            }
+            div.blue {
+                background: blue;
+                order: 1;
+            }
+            div.gray {
+                background: gray;
+                flex-grow: 10;
+            }
+            div.yellow {
+                background: yellow;
+                order: -1;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="pink">
+            <div class="red">x</div>
+            <div class="green">x</div>
+            <div class="blue">x</div>
+            <div class="gray">x</div>
+            <div class="yellow">x</div>
+        </div>
+    </body>
+</html>

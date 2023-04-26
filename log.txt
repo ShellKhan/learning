@@ -1,0 +1,106 @@
+commit d4f9ac3e8b5f95dae87b08c401484bfd8f1134c5
+Author: Jorian <jorian@mail.ru>
+Date:   Tue Apr 25 20:52:25 2023 +0300
+
+    Вся куча сегодняшних файлов без разбора.
+
+commit 2f61bf270f356ae0c160a7f6b70e7937b78392db
+Author: Jorian <jorian@mail.ru>
+Date:   Tue Apr 25 10:31:47 2023 +0300
+
+    chessboadr without table tags
+
+commit 59e744a052c9bba64e55212e666f9686c27e6c0c
+Author: Jorian <jorian@mail.ru>
+Date:   Mon Apr 24 15:15:55 2023 +0300
+
+    24 апреля
+
+commit 707a636dfe166c3d75e8b7668fe5e25ada846707
+Merge: fc17242 531d26b
+Author: Konstantin Shell <66392839+ShellKhan@users.noreply.github.com>
+Date:   Mon Apr 24 13:18:45 2023 +0300
+
+    Merge pull request #1 from ShellKhan/testconflict
+    
+    pull request
+
+commit 531d26be7c0a3cdb622817e36f282400339ae5aa
+Merge: 55e19a9 fc17242
+Author: Konstantin Shell <66392839+ShellKhan@users.noreply.github.com>
+Date:   Mon Apr 24 13:18:28 2023 +0300
+
+    Merge branch 'master' into testconflict
+
+commit 55e19a9e3d04785b5790311040d67960bf825acd
+Author: Jorian <jorian@mail.ru>
+Date:   Mon Apr 24 13:17:26 2023 +0300
+
+    pull request
+
+commit fc172420a55e276b380767e084da9549c850e579
+Merge: 4c377b5 81f21f9
+Author: Jorian <jorian@mail.ru>
+Date:   Mon Apr 24 13:12:09 2023 +0300
+
+    merge conflict 4
+
+commit 4c377b53cb1a53113d10dca1d8ff5397687753d8
+Author: Jorian <jorian@mail.ru>
+Date:   Mon Apr 24 13:09:47 2023 +0300
+
+    merge conflict 3
+
+commit 81f21f96370826c80ad4c3f53e92079b3ba2f90d
+Author: Jorian <jorian@mail.ru>
+Date:   Mon Apr 24 13:08:28 2023 +0300
+
+    merge conflict 2
+
+commit 959ddc088face97962cfafe68848481431fba38f
+Author: Jorian <jorian@mail.ru>
+Date:   Mon Apr 24 13:05:57 2023 +0300
+
+    merge conflict 1
+
+commit 3584833e45b70569b00704b8d23908114b026ff3
+Author: Jorian <jorian@mail.ru>
+Date:   Mon Apr 24 11:04:15 2023 +0300
+
+    commit example 2
+
+commit 2cfd570fb027f2c25b78944eb70cf4ebe30c467d
+Author: Jorian <jorian@mail.ru>
+Date:   Mon Apr 24 10:52:02 2023 +0300
+
+    commit example
+
+commit 30345fa6b52c70ccb492dcb25d93997d0a28bf4d
+Author: Jorian <jorian@mail.ru>
+Date:   Mon Apr 24 10:49:58 2023 +0300
+
+    gitignore & gitkeep
+
+commit 3d8b9da02cac7e0384a8333e75e83f8e954969a8
+Author: Jorian <jorian@mail.ru>
+Date:   Sun Apr 23 18:39:22 2023 +0300
+
+    remove test commit
+
+commit 2345cac13487703972b10caca84c3799aa0323da
+Author: Jorian <jorian111@mail.ru>
+Date:   Fri Apr 21 22:17:40 2023 +0300
+
+    test commit 2
+
+commit 866855c71cfa54885fd17dae59841a4ee3b8812d
+Author: Jorian <jorian@mail.ru>
+Date:   Fri Apr 21 22:11:28 2023 +0300
+
+    test commit
+
+commit f43b4bdcbae7a182096b2cc4d073f1bc17e1a6b0
+Author: Jorian <jorian@mail.ru>
+Date:   Thu Apr 20 14:44:07 2023 +0300
+
+    initial commit
