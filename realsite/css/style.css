@@ -16,12 +16,12 @@ body {
     grid-template-rows: 100px auto 150px;
 }
 header {
-    height: 100px;
+    /* height: 100px; */
     background: blue;
     /*flex: none;*/
 }
 footer {
-    height: 150px;
+    /* height: 150px; */
     background: gray;
     /*flex: none;*/
 }
