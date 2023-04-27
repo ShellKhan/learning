@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Transforms</title>
+        
+        <style>
+            div {
+                width: 400px;
+                height: 400px;
+                margin: 200px;
+                border: 1px solid black;
+                font-size: 30px;
+                position: absolute;
+                opacity: .5;
+                
+            }
+            .trans {
+                background-color: pink;
+                background-size: cover;
+                color: red;
+                transform: translate(100px) rotate(120deg);
+            }
+            .raw {
+                background-color: lightblue;
+                background-size: cover;
+                color: blue;
+            }
+            body:hover .trans {
+                transform: none;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="raw">123456</div>
+        <div class="trans">QWERTY</div>
+    </body>
+</html>
