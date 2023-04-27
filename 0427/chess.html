@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Шахматная доска</title>
+        
+        <meta charset="utf-8">
+        
+        <style>
+            .table {
+                display: grid;
+                grid-template-columns: 52px repeat(8, 102px) 52px;
+                grid-template-rows: 52px repeat(8, 102px) 52px;
+                outline: 1px solid black;
+                width: 920px;
+                height: 920px; /* не обязательно */
+            }
+            .table > div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: default;
+                user-select: none;
+                font-size: 60px;
+            }
+            div.th {
+                font-weight: bold;
+                font-size: 16px;
+                background: lightgray;
+            }
+            div.td {
+                background: gray;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="table">
+            <!-- topline -->
+            <div class="th"></div>
+            <div class="th">A</div>
+            <div class="th">B</div>
+            <div class="th">C</div>
+            <div class="th">D</div>
+            <div class="th">E</div>
+            <div class="th">F</div>
+            <div class="th">G</div>
+            <div class="th">H</div>
+            <div class="th"></div>
+            <!-- 8 line -->
+            <div class="th">8</div>
+            <div class="">&#x265C;</div>
+            <div class="td">&#x265E;</div>
+            <div class="">&#x265D;</div>
+            <div class="td">&#x265B;</div>
+            <div class="">&#x265A;</div>
+            <div class="td">&#x265D;</div>
+            <div class="">&#x265E;</div>
+            <div class="td">&#x265C;</div>
+            <div class="th">8</div>
+            <!-- 7 line -->
+            <div class="th">7</div>
+            <div class="td">&#x265F;</div>
+            <div class="">&#x265F;</div>
+            <div class="td">&#x265F;</div>
+            <div class="">&#x265F;</div>
+            <div class="td">&#x265F;</div>
+            <div class="">&#x265F;</div>
+            <div class="td">&#x265F;</div>
+            <div class="">&#x265F;</div>
+            <div class="th">7</div>
+            <!-- 6 line -->
+            <div class="th">6</div>
+            <div class=""></div>
+            <div class="td"></div>
+            <div class=""></div>
+            <div class="td"></div>
+            <div class=""></div>
+            <div class="td"></div>
+            <div class=""></div>
+            <div class="td"></div>
+            <div class="th">6</div>
+            <!-- 5 line -->
+            <div class="th">5</div>
+            <div class="td"></div>
+            <div class=""></div>
+            <div class="td"></div>
+            <div class=""></div>
+            <div class="td"></div>
+            <div class=""></div>
+            <div class="td"></div>
+            <div class=""></div>
+            <div class="th">5</div>
+            <!-- 4 line -->
+            <div class="th">4</div>
+            <div class=""></div>
+            <div class="td"></div>
+            <div class=""></div>
+            <div class="td"></div>
+            <div class=""></div>
+            <div class="td"></div>
+            <div class=""></div>
+            <div class="td"></div>
+            <div class="th">4</div>
+            <!-- 3 line -->
+            <div class="th">3</div>
+            <div class="td"></div>
+            <div class=""></div>
+            <div class="td"></div>
+            <div class=""></div>
+            <div class="td"></div>
+            <div class=""></div>
+            <div class="td"></div>
+            <div class=""></div>
+            <div class="th">3</div>
+            <!-- 2 line -->
+            <div class="th">2</div>
+            <div class="">&#x2659;</div>
+            <div class="td">&#x2659;</div>
+            <div class="">&#x2659;</div>
+            <div class="td">&#x2659;</div>
+            <div class="">&#x2659;</div>
+            <div class="td">&#x2659;</div>
+            <div class="">&#x2659;</div>
+            <div class="td">&#x2659;</div>
+            <div class="th">2</div>
+            <!-- 1 line -->
+            <div class="th">1</div>
+            <div class="td">&#x2656;</div>
+            <div class="">&#x2658;</div>
+            <div class="td">&#x2657;</div>
+            <div class="">&#x2655;</div>
+            <div class="td">&#x2654;</div>
+            <div class="">&#x2657;</div>
+            <div class="td">&#x2658;</div>
+            <div class="">&#x2656;</div>
+            <div class="th">1</div>
+            <!-- bottomline -->
+            <div class="th"></div>
+            <div class="th">A</div>
+            <div class="th">B</div>
+            <div class="th">C</div>
+            <div class="th">D</div>
+            <div class="th">E</div>
+            <div class="th">F</div>
+            <div class="th">G</div>
+            <div class="th">H</div>
+            <div class="th"></div>
+        </div>
+    </body>
+</html>
