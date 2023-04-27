@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Угадайка карточная</title>
+        
+        <style>
+            body {
+                margin: 0;
+            }
+            .nest {
+                padding: 50px;
+                display: flex;
+                justify-content: space-evenly;
+            }
+            .desk {
+                width: 185px;
+                height: 277px;
+                position: relative;
+            }
+            .desk > div {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                text-align: center;
+                line-height: 285px;
+                transition: transform 2s ease;
+                backface-visibility: hidden;
+            }
+            .face {
+                font-size: 300px;
+                color: red;
+            }
+            .back {
+                font-size: 30px;
+                box-sizing: border-box;
+                border: 7px solid red;
+                transform: rotateY(180deg);
+            }
+            .desk:hover .face {
+                transform: rotateY(180deg);
+            }
+            .desk:hover .back {
+                transform: rotateY(0deg);
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="nest">
+            <div class="desk">
+                <div class="face">&#127137;</div>
+                <div class="back">НЕ УГАДАЛ</div>
+            </div>
+            <div class="desk">
+                <div class="face">&#127137;</div>
+                <div class="back">НЕ УГАДАЛ</div>
+            </div>
+            <div class="desk">
+                <div class="face">&#127137;</div>
+                <div class="back">НЕ УГАДАЛ</div>
+            </div>
+        </div>
+        
+        <script>
+            let q = Math.floor(Math.random() * 3);
+            document.querySelectorAll('.back')[q].innerHTML = 'УГАДАЛ';
+        </script>
+    </body>
+</html>
