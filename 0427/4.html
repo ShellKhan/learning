@@ -13,22 +13,25 @@
                 border: 1px solid black;
                 font-size: 30px;
                 position: absolute;
-                opacity: .5;
             }
             .trans {
                 background-color: pink;
                 background-size: cover;
                 color: red;
-                transition: all 5s ease;
+                opacity: .8;
+                /*transition: all 10s ease;*/
+                transition: all 10s linear;
+                transition: all 10s steps(11);
             }
             .raw {
                 background-color: lightblue;
                 background-size: cover;
                 color: blue;
+                opacity: .2;
             }
             body:hover .trans {
-                width: 600px;
-                height: 200px;
+                width: 800px;
+                height: 100px;
             }
         </style>
     </head>
