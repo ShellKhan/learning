@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Трансформации</title>
+        
+        <meta charset="utf-8">
+        
+        <style>
+            body {
+                margin: 0;
+            }
+            .trans {
+                width: 400px;
+                height: 400px;
+                background: red;
+                border: 1px solid black;
+                border-radius: 50%;
+                margin: 100px;
+                /*animation: test 5s 5s 1 both;*/
+                animation: test 3s 1s 3;
+                /*animation-fill-mode: none | forwards | backwards | both*/
+            }
+            @keyframes test {
+                from {
+                    background: green;
+                    width: 600px;
+                    height: 200px;
+                }
+                to {
+                    background: blue;
+                    width: 200px;
+                    height: 600px;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="trans">
+            
+        </div>
+    </body>
+</html>
