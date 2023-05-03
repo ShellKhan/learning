@@ -1,5 +1,26 @@
+@font-face {
+    font-family: 'opensans';
+    src: url('OpenSans-Regular.ttf') format('woff2');
+}
+@font-face {
+    font-family: 'oswald';
+    src: url('Oswald-Bold.ttf') format('woff2');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'oswald';
+    src: url('Oswald-Medium.ttf') format('woff2');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'oswald';
+    src: url('Oswald-Regular.ttf') format('woff2');
+    font-weight: 400;
+}
+
 body {
     margin: 0;
+    font-family: 'oswald';
 }
 header {
     height: 890px;
@@ -7,20 +28,62 @@ header {
 footer {
     height: 181px;
     background: #f7654a;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #fff;
+    padding: 30px 0 0;
 }
 main {
     height: 931px;
 }
+.container {
+    width: 1110px;
+    margin: 0 auto;
+}
+
+
 .top {
     height: 740px;
-    background: linear-gradient(0deg, rgba(64, 65, 73, 0.9), rgba(64, 65, 73, 0.9)), #404149;
+    box-sizing: border-box;
+    background: linear-gradient(0deg, rgba(64, 65, 73, 0.9), rgba(64, 65, 73, 0.9)), url('header_bg.jpg') center no-repeat, #404149;
+    color: #fff;
+    text-align: center;
+}
+.top .container {
+    padding-top: 192px;
+    position: relative;
+}
+.top h1 {
+    margin: 0 auto;
+    width: 734px;
+    font-size: 64px;
+    line-height: 95px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+.top h4 {
+    margin: 17px auto 0;
+    width: 734px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.logo {
+    text-indent: -9999px;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 60px;
+    height: 50px;
+    background: url('logo.svg');
 }
 .menu {
     box-sizing: border-box;
     height: 300px;
-    width: 1110px;
     background: #f7f7f7;
-    margin: -150px auto 0;
+    margin-top: -150px;
     text-align: center;
     padding: 35px;
 }
@@ -30,4 +93,38 @@ main {
     margin: 15px;
     width: 190px;
     height: 200px;
+}
+footer h3 {
+    font-size: 48px;
+    line-height: 71px;
+    margin: 0;
+}
+footer h6 {
+    font-size: 24px;
+    line-height: 36px;
+    margin: 0;
+}
+footer button {
+    float: right;
+    background: #fff;
+    border: none;
+    width: 175px;
+    height: 49px;
+    padding: 14px 30px;
+    color: #000;
+    cursor: pointer;
+    margin-top: 43px;
+    font-family: 'oswald';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.05em;
+    text-align: right;
+}
+footer button::before {
+    content: '';
+    float: left;
+    height: 21px;
+    width: 18px;
+    background: url('btn.svg') 0px 4px no-repeat;
 }
