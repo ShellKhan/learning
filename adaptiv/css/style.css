@@ -1,0 +1,137 @@
+/* fonts */
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/Roboto-Regular.ttf');
+    font-weight: 400;
+}
+
+/* global reset */
+html, body, body div, div, span, h1, h2, h3, h4, h5, h6, p, a, em, img, small, strike, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, aside, section, article, header, footer, main, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+    box-sizing: content-box;
+}
+ol, ul, li {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+input, textarea {
+    font: inherit;
+    box-sizing: border-box;
+}
+
+/* main */
+body {
+    font-family: 'roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.05em;
+    color: rgba(31,63,104,.6);
+    position: relative;
+}
+header {
+    position: absolute;
+    top: 30px;
+    /* left: 0; */
+    /* right: 0; */
+    width: 1140px;
+    height: 48px;
+    left: 50%;
+    margin-left: -570px;
+}
+footer {
+    color: #fff;
+    background: #316099;
+}
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+/* header */
+/* header .container { */
+    /* position: relative; */
+    /* height: 48px; */
+/* } */
+header a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: red; /* временный стиль */
+}
+.logo {
+    left: 0;
+    width: 46px;
+}
+.contacts {
+    right: 0;
+    width: 34px;
+}
+
+/* footer */
+footer section + section {
+    border-top: 1px solid rgba(255,255,255,.4);
+}
+footer .container {
+    padding: 64px 0;
+}
+footer ul {
+    display: flex;
+    justify-content: space-between;
+}
+footer li {
+    list-style-type: upper-latin;
+    list-style-position: inside;
+    flex: none;
+    width: 350px;
+}
+footer li span {
+    margin-left: 25px;
+    display: inline-block;
+    vertical-align: top;
+    width: 250px;
+}
+.copy {
+    margin: 64px 0 0;
+    opacity: 0.4;
+}
+
+/* adaptivity */
+@media screen and (max-width:1199px) {
+    .container {
+        width: 700px;
+    }
+    footer .container {
+        width: 520px;
+    }
+    footer ul {
+        display: block;
+    }
+    footer li {
+        width: 100%;
+    }
+    footer li span {
+        width: auto;
+        margin-left: 40px;
+    }
+    footer li + li {
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width:729px) {
+    .container {
+        width: auto;
+        margin: 0 16px;
+    }
+    footer .container {
+        width: auto;
+        padding: 32px 0;
+    }
+}
