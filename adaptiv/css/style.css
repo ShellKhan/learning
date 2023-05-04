@@ -4,6 +4,11 @@
     src: url('../fonts/Roboto-Regular.ttf');
     font-weight: 400;
 }
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/Roboto-Light.ttf');
+    font-weight: 300;
+}
 
 /* global reset */
 html, body, body div, div, span, h1, h2, h3, h4, h5, h6, p, a, em, img, small, strike, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, aside, section, article, header, footer, main, input, textarea, button {
@@ -35,12 +40,11 @@ body {
     letter-spacing: 0.05em;
     color: rgba(31,63,104,.6);
     position: relative;
+    min-width: 375px;
 }
 header {
     position: absolute;
     top: 30px;
-    /* left: 0; */
-    /* right: 0; */
     width: 1140px;
     height: 48px;
     left: 50%;
@@ -50,21 +54,16 @@ footer {
     color: #fff;
     background: #316099;
 }
-.container {
+section {
     width: 1140px;
     margin: 0 auto;
 }
 
 /* header */
-/* header .container { */
-    /* position: relative; */
-    /* height: 48px; */
-/* } */
 header a {
     position: absolute;
     top: 0;
     bottom: 0;
-    background: red; /* временный стиль */
 }
 .logo {
     left: 0;
@@ -76,11 +75,11 @@ header a {
 }
 
 /* footer */
-footer section + section {
-    border-top: 1px solid rgba(255,255,255,.4);
-}
-footer .container {
+footer section {
     padding: 64px 0;
+}
+.f_wrap {
+    border-top: 1px solid rgba(255,255,255,.4);
 }
 footer ul {
     display: flex;
@@ -103,12 +102,41 @@ footer li span {
     opacity: 0.4;
 }
 
+/* content */
+.m_wrap {
+    height: 768px;
+    background: linear-gradient(0deg, #EBF3FB 0%, #EBF3FB 8.84%, rgba(152, 195, 232, 0) 31.12%);
+}
+.m_top {
+    padding-top: 190px;
+    background: url('../images/big_image.png') right 190px no-repeat;
+    height: 492px;
+}
+h1 {
+    width: 510px;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 74px;
+    letter-spacing: 0.04em;
+}
+.m_top > div {
+    width: 425px;
+}
+.m_top button {
+    font-family: 'roboto';
+}
+
+
 /* adaptivity */
 @media screen and (max-width:1199px) {
-    .container {
+    header {
+        width: 700px;
+        margin-left: -350px;
+    }
+    section {
         width: 700px;
     }
-    footer .container {
+    footer section {
         width: 520px;
     }
     footer ul {
@@ -126,12 +154,29 @@ footer li span {
     }
 }
 @media screen and (max-width:729px) {
-    .container {
+    header {
+        width: auto;
+        margin-left: 0;
+        left: 16px;
+        right: 16px;
+        top: 16px;
+    }
+    section {
         width: auto;
         margin: 0 16px;
     }
-    footer .container {
+    footer section {
         width: auto;
         padding: 32px 0;
     }
+    footer ul {
+        padding-left: 20px;
+    }
+    footer li {
+        list-style-position: outside;
+    }
+    footer li span {
+        margin-left: 20px;
+    }
+    
 }

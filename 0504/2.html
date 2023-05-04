@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>BEM demo</title>
+        <style>
+            .main-menu {
+                margin: 100px;
+                padding: 10px;
+                width: 200px;
+                border-radius: 10px;
+                border: 1px solid blue;
+            }
+            .main-menu__item {
+                border: 1px solid blue;
+                color: blue;
+                font: 24px Arial;
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+            .main-menu__item_active {
+                color: white;
+                background: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="example">
+            <div class="wrapper">
+                <div class="inner">
+                    <div class="main-menu">
+                        <div class="main-menu__item main-menu__item_active">Menupoint 1</div>
+                        <div class="main-menu__item">Menupoint 2</div>
+                        <div class="main-menu__item">Menupoint 3</div>
+                        <div class="main-menu__item">Menupoint 4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
