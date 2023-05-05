@@ -125,6 +125,11 @@ h1 {
 .m_top button {
     font-family: 'roboto';
 }
+#map {
+    height: 480px;
+    width: 940px;
+    margin: 100px auto;
+}
 
 
 /* adaptivity */
@@ -152,6 +157,12 @@ h1 {
     footer li + li {
         margin-top: 20px;
     }
+    #map {
+        width: 100%;
+        max-width: 940px;
+        margin: 64px auto;
+        height: 392px;
+    }
 }
 @media screen and (max-width:729px) {
     header {
@@ -178,5 +189,8 @@ h1 {
     footer li span {
         margin-left: 20px;
     }
-    
+    #map {
+        height: 350px;
+        margin: 32px auto;
+    }
 }
