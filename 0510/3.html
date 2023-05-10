@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            let num = +prompt('введите число');
+            
+            /*
+            while (num > 0) {
+                console.log(num);
+                num--;
+            }
+            */
+            /*
+            do {
+                console.log(num);
+                num--;
+            } while (num > 0);
+            */
+            /*
+            for (let i = num; i > 0; i--) {
+                console.log(i);
+            }
+            */
+            /*
+            for ( ; num > 0; ) {
+                console.log(num);
+                num--;
+            }
+            */
+            /*
+            for ( ; ; ) {
+                if (num <= 0) break;
+                console.log(num);
+                num--;
+            }
+            */
+            while (true) {
+                if (num <= 0) break;
+                //if (num <= 0) continue;
+                console.log(num);
+                num--;
+            }
+            
+            
+            
+            console.log("that's all!");
+            
+        </script>
+    </head>
+    
+    <body></body>
+</html>
