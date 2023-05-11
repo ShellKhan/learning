@@ -32,13 +32,23 @@
                     // запрашиваем у юзера число
                     let variant = prompt('Введите число от 1 до 100');
                     // проверяем ответ
-                    
-                    
-                    
-                    
-                    
-                    // если результат угадан
-                    //if (...) break;
+                    if (variant == 'хватит') return;
+                    variant = +variant;
+                    if (variant != variant) {
+                        alert('Вы ввели не число');
+                        continue;
+                    }
+                    if (variant < 1 || variant > 100) {
+                        alert('Вы ввели число не от 1 до 100');
+                        continue;
+                    }
+                    if (variant == prize) {
+                        break;
+                    } else if (variant > prize) {
+                        alert('Ваше число слишком большое');
+                    } else {
+                        alert('Ваше число слишком маленькое');
+                    }
                 }
                 // вывести количество попыток до результата
                 alert(`Вы угадали с ${count} попыток`);
