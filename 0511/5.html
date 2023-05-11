@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            let q, w;
+            
+            //console.log(q(3));
+            //console.log(func(4));
+            
+            //q = function(x){return 10*x}
+            
+            /*function func(a) {
+                a *= 10;
+                return a;
+            }*/
+            
+            function outer(){
+                function inner() {
+                    console.log(12345);
+                }
+                let e = function(){console.log(1000)}
+                q = function(){console.log(1000)}
+                w = inner;
+                
+                inner();
+                q();
+                w();
+                e();
+            }
+            
+            outer();
+            //inner();
+            q();
+            w();
+            e();
+        </script>
+    </head>
+    
+    <body></body>
+</html>

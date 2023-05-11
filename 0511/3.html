@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            /*
+            let newfunc = function show(text) {
+                console.log(text);
+            }
+            */
+            //let newfunc = x => console.log(x);
+            //let newfunc = (x) => {console.log(x)};
+            
+            let newfunc = function(text, func = alert) {
+                func(text);
+            }
+            
+            
+            newfunc('text string');
+            newfunc();
+            newfunc('text string', console.log);
+            newfunc('text string', console.log, 12345, true, null);
+            //show(555);
+        </script>
+    </head>
+    
+    <body></body>
+</html>

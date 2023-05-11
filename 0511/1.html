@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            let a = 2, b = 1;
+            
+            let linker;
+            
+            function sum(x, y) {
+                //console.log(x + y);
+                let a = 'qqq';
+                
+                function show() {
+                    //let qwe = 0;
+                    /*console.log(a);
+                    console.log(y);
+                    console.log(qwe);*/
+                    let a = true;
+                    console.log('function show run');
+                }
+                /*console.log(x);
+                console.log(y);
+                console.log(a);
+                console.log(b);*/
+                
+                linker = show;
+                
+                /*console.log(a);
+                console.log(y);
+                //console.log(qwe);*/
+                //console.log(a);
+            }
+            
+            
+            
+            //sum(1, 2);
+            
+            sum(a, b);
+            
+            //console.log(a);
+            //console.log(y);
+            //console.log(qwe);
+            
+            linker();
+        </script>
+    </head>
+    
+    <body></body>
+</html>
