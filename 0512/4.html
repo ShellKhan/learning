@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            let obj = {
+                a: {
+                    q: 1,
+                    w: 2,
+                    e: 3
+                },
+                toString() {
+                    return `a.q = ${this.a.q}\na.w = ${this.a.w}\na.e = ${this.a.e}`
+                },
+                valueOf() {
+                    return 55;
+                }
+            };
+            /*
+            console.log(obj);
+            
+            delete obj.a;
+            
+            console.log(obj.a); // undefined
+            
+            //console.log(obj.a.w); // ERROR!
+            
+            console.log(obj.a?.w); // no error
+            */
+            console.log(`${obj}`);
+            
+            console.log(obj + 0);
+            
+            console.log(`${{}}`);
+            
+            console.log({} + 0);
+            
+        </script>
+    </head>
+    
+    <body></body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            //'use strict'
+            function showthis() {
+                console.log(this);
+            }
+            let obj = {
+                name: 'John',
+                hello() {
+                    let a = () => alert(`Hello! My name is ${this.name}`);
+                    a();
+                }
+                //hello: () => alert(`Hello! My name is ${this.name}`)
+            };
+            
+            /*let user = Object.assign({}, obj);
+            user.name = 'Ivan';*/
+            
+            //obj.showthis = showthis;
+            
+            console.log(obj);
+            /*
+            obj.showthis();
+            showthis();
+            */
+            /*obj.hello();
+            user.hello();*/
+            
+            obj.hello();
+        </script>
+    </head>
+    
+    <body></body>
+</html>

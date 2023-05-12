@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            //'use strict'
+            
+            function User(name, age) {
+                console.log(new.target);
+                
+                this.name = name;
+                this.age = age;
+                this.hello = function(){
+                    alert(`Hello! My name is ${this.name}`)
+                }
+                
+                console.log(this);
+            }
+            
+            let vasya = new User('Vasya', 33);
+            
+            
+            //vasya.hello();
+            
+            let petya = new User('Peter', 42);
+            
+            //petya.hello();
+            
+            User();
+        </script>
+    </head>
+    
+    <body></body>
+</html>
