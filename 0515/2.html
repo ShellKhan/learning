@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            let arr = [1, 2, 33, 54, 13, 21, 22];
+            console.log(arr);
+            /*
+            arr.forEach(function(item, index, array) {
+                console.log(item);
+                console.log(index);
+                console.log(array);
+                console.log('=======');
+            });
+            */
+            //arr.forEach(eacher);
+            /*console.log(arr.find(function(item, index, array) {
+                return item > 20 && index > 3;
+            }));*/
+            /*
+            console.log(arr.filter(function(item, index, array) {
+                return item > 20; // возвращает массив итемов, где ретурн == тру
+            }));
+            
+            console.log(arr.map(function(item, index, array) {
+                return item > 20; // возвращает массив ретурнов
+            }));
+            */
+            /*
+            console.log(arr.findIndex(function(item, index, array) {
+                return item > 20 && index > 3;
+            }));
+            */
+            
+            /*
+            arr.sort(compareNumeric);
+            
+            console.log(arr);
+            
+            arr.sort();
+            */
+            
+            console.log(arr.reduce(function(accumulator, item, index, array){
+                console.log(accumulator + ' ' + item);
+                return accumulator + item;
+            }, 0));
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            console.log(arr);
+            
+            function compareNumeric(a, b) {
+                //console.log(a + ' ' + b);
+                let res = -1;
+                if (a > b) {res = 1} else if (a == b) {res = 0};
+                //console.log(res);
+                return res;
+            }
+            
+            function eacher(item, index, array) {
+                console.log(item);
+                console.log(index);
+                console.log(array);
+                console.log('=======');
+            }
+        </script>
+    </head>
+    
+    <body></body>
+</html>
