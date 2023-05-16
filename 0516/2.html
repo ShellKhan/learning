@@ -10,10 +10,24 @@
         <script>
             let count;
             function func(command) {
+                if (command == 'start') {
+                    count = Date.now();
+                    
+                    console.log('Время пошло!');
+                    return;
+                }
                 
+                let next = Date.now();
+                let interval = next - count;
+                let ms = interval % 1000;
+                interval = Math.floor(interval/1000); // to seconds
+                let sec = interval % 60;
+                interval = Math.floor(interval/60); // to minutes
+                let min = interval % 60;
+                interval = Math.floor(interval/60); // to hours
+                let hrs = interval;
                 
-                
-                
+                console.log(`Между нажатиями кнопок прошло ${hrs} часов ${min} минут ${sec} секунд и ${ms} миллисекунд.`);
             }
         </script>
     </head>

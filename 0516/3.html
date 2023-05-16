@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            let count;
+            function func(command) {
+                if (!count) {
+                    count = Date.now();
+                    console.log('Время пошло!');
+                } else {
+                    let interval = Date.now() - count;
+                    let ms = interval % 1000;
+                    interval = Math.floor(interval/1000);
+                    let sec = interval % 60;
+                    interval = Math.floor(interval/60);
+                    count = null;
+                    console.log(`Между нажатиями кнопок прошло ${Math.floor(interval / 60)} часов ${interval % 60} минут ${sec} секунд и ${ms} миллисекунд.`);
+                }
+            }
+        </script>
+    </head>
+    
+    <body>
+        <button type="button" onclick="func()">START/STOP</button>
+    </body>
+</html>
