@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            //let today = new Date();
+            /*
+            console.log(today.getDate());
+            console.log(today.getUTCDate());
+            console.log(today.getDay());
+            console.log(today.getMonth());
+            console.log(today.getFullYear());
+            //console.log(today.getYear()); устарел и плохо работает
+            
+            console.log(today.getMilliseconds());
+            console.log(today.getSeconds());
+            console.log(today.getMinutes());
+            console.log(today.getUTCMinutes());
+            console.log(today.getHours());
+            console.log(today.getUTCHours());
+            
+            //console.log(today.valueOf());
+            
+            console.log(today.getTime()); // timestamp, benchmark
+            
+            console.log(today.getTimezoneOffset());
+            
+            console.log(today.toString());
+            */
+            /*
+            console.log(new Date(1)) // аргумент в миллисекундах от 01.01.1970 00:00:00.000
+            console.log(new Date(1, 2)) // год, месяц, день, часы, минуты, секунды, миллисекунды
+            console.log(new Date(1, 2, 3)) // год, месяц, день, часы, минуты, секунды, миллисекунды
+            console.log(new Date(1, 2, 3, 4)) // год, месяц, день, часы, минуты, секунды, миллисекунды
+            console.log(new Date(1, 2, 3, 4, 5)) // год, месяц, день, часы, минуты, секунды, миллисекунды
+            console.log(new Date(1, 2, 3, 4, 5, 6)) // год, месяц, день, часы, минуты, секунды, миллисекунды
+            console.log(new Date(1, 2, 3, 4, 5, 6, 7)) // год, месяц, день, часы, минуты, секунды, миллисекунды
+            */
+            /*
+            console.log(
+                (
+                    new Date(1, 2, 3, 4, 5, 6, 7)
+                ).getMilliseconds()
+            ) // год, месяц, день, часы, минуты, секунды, миллисекунды
+            */
+            /*
+            let today = new Date(1, 2, 3, 4, 5, 6, 7);
+            let text = today.getMilliseconds();
+            console.log(text);
+            console.log((new Date(1, 2, 3, 4, 5, 6, 7)).getMilliseconds());
+            console.log(
+                (
+                    new Date(1, 2, 3, 4, 5, 6, 7)
+                ).getMilliseconds()
+            );
+            */
+            
+            /*
+            console.log(Date.parse('Tue May 16 2023 12:43:02 GMT+0300 (Москва, стандартное время)'));
+            console.log(Date.parse('2023-05-16T12:43:02'));
+            console.log(Date.parse('05/16/2023 12:43:02'));
+            console.log(Date.parse('05/16/23 12:43:02'));
+            */
+            /*
+            console.log(new Date('Tue May 1 2023'));
+            console.log(new Date('2023-05-01'));
+            console.log(new Date(2023, 4, 1));
+            console.log(new Date(2023, 3, 31));
+            console.log(new Date(2023, -1, -2));
+            console.log(new Date('2023-00-00'));
+            */
+            
+            let prev = new Date(2020, 10, 5);
+            let next = new Date(2021, 5, 2);
+            
+            let delta = next.getTime() - prev.getTime();
+            
+            console.log(delta);
+            console.log(new Date(delta));
+            
+            let delta_formatted = {
+                days: Math.floor(delta/(1000*60*60*24))
+            };
+            delta_formatted.months = Math.floor(delta_formatted.days/30);
+            
+            console.log(delta_formatted);
+        </script>
+    </head>
+    
+    <body></body>
+</html>
