@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            button {
+                font: 50px Arial;
+                margin: 100px;
+                width: 100px;
+            }
+        </style>
+        
+        <script>
+            function func(x) {
+                let counter = x;
+                
+                function minus() {
+                    console.log(--counter);
+                }
+                function plus() {
+                    console.log(++counter);
+                }
+                
+                console.log(counter);
+                return [plus, minus];
+            }
+            
+            let [up, down] = func(10);
+            
+            
+        </script>
+    </head>
+    
+    <body>
+        <button style="color:green" onclick="up()">+</button>
+        <button style="color:red" onclick="down()">-</button>
+    </body>
+</html>

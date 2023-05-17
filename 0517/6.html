@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            //'use strict'
+            /*
+            let a = 'global let';
+            //b = 'global var';
+            
+            console.log(a, b);
+            
+            function func() {
+                let a = 'function let';
+                var b = 'function var';
+                
+                console.log(a, b);
+            }
+            func();
+            console.log(a, b);
+            
+            
+            if (true) {
+                let a = 'block let';
+                var b = 'block var';
+                console.log(a, b);
+            }
+            
+            console.log(a, b);
+            */
+            /*
+            (function(arg1, arg2, arg3) {
+                console.log(arg1, arg2, arg3);
+                a = alert;
+            }(1,2,3));
+            */
+            //var a;
+            //let c;
+            /*
+            function func(arg1, arg2) {
+                //console.log('func go!')
+                console.log(func.alef);
+                //console.log(this.alef);
+                //console.log(alef);
+            }
+            
+            //let fexp = function(arg) {
+                //console.log('fexp go!')
+            //}
+            
+            func.alef = 'a';
+            
+            func();
+            */
+            let o1 = {
+                func: function(){
+                    console.log(this.alef);
+                },
+                alef: 'a'
+            }
+            
+            function o2() {
+                let alef = 'b';
+                //func();
+                console.log(alef);
+            }
+            
+            function func() {
+                //console.log(arguments.callee.caller.alef);
+                //console.log(this.alef);
+                arguments.callee.caller();
+            }
+            
+            o1.func();
+            /*
+            o2.alef = 'c';
+            o2.func = func;
+            o2.func();
+            */
+            //o2();
+        </script>
+    </head>
+    
+    <body></body>
+</html>

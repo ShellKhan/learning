@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            "use strict"
+            /*
+            let obj = {
+                name: 'Ivan',
+                call: function(){
+                    return this.name;
+                }
+            }
+            
+            console.log(obj.call());
+            
+            function deco(func) {
+                return function(){
+                    return 'Hello, ' + func.call(this);
+                }
+            }
+            
+            obj.call = deco(obj.call);
+            
+            console.log(obj.call());
+            */
+            function func() {
+                console.log(this);
+            }
+            
+            let a = {
+                name: 'obj'
+            };
+            
+            let b = 42;
+            
+            //func();
+            
+            //func.call(a);
+            //func.apply(a);
+            
+            let fb = func.bind(b);
+            
+            fb();
+        </script>
+    </head>
+    
+    <body></body>
+</html>

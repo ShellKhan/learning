@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            function iterfunc(x) {
+                let res = x--;
+                while (x > 0) {
+                    res *= x--;
+                }
+                return res;
+            }
+            
+            function recfunc(x) {
+                console.log(x);
+                let a;
+                if (x == 1n) {
+                    return x;
+                } else {
+                    a = recfunc(x-1n);
+                    return x*a;
+                }
+            }
+            /*
+            console.log(iterfunc(5));
+            console.log(iterfunc(3));
+            console.log(iterfunc(1));
+            */
+            /*
+            console.log(recfunc(5));
+            console.log(recfunc(3));
+            console.log(recfunc(1));
+            */
+            console.log(`5! == ${recfunc(5n)}`);
+        </script>
+    </head>
+    
+    <body></body>
+</html>

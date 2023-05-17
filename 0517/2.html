@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            function func(x1, x2, ...x3) {
+                //console.log(arguments);
+                //console.log(x1, x2, x3);
+                
+                console.log(x3.find(x => x==5));
+                //console.log(arguments.find(x => x==5));
+                
+                console.log([].find.call(arguments, x => x==5))
+                
+                /*
+                for (a of arguments) {
+                    console.log(a);
+                }
+                */
+                
+                let arr = [x1,x2, ...x3];
+                
+                console.log(arr);
+            }
+            
+            
+            
+            func(1,2,3,4,5);
+        </script>
+    </head>
+    
+    <body></body>
+</html>

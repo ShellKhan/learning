@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            /*
+            function func() {
+                console.log(Date.now());
+            }
+            
+            let timer1 = setTimeout(func, 3000);
+            let timer2 = setTimeout(func, 6000);
+            let timer3 = setInterval(func, 1000);
+            
+            console.log(timer1);
+            console.log(timer2);
+            console.log(timer3);
+            
+            clearTimeout(timer1);
+            clearInterval(timer2);
+            clearTimeout(timer3);
+            */
+            let counter = 0;
+            /*
+            setInterval(function(){
+                console.log(counter++);
+            }, 1000);
+            */
+            //setInterval(console.log.bind(globalThis, counter), 1000);
+            
+            setTimeout(function run() {
+                console.log(counter++);
+                setTimeout(run, 1000);
+            }, 1000);
+            
+            
+        </script>
+    </head>
+    
+    <body></body>
+</html>
