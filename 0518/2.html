@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            function Animal(name) {
+                this.name = name;
+                //this.run = () => console.log(this.name + ' бежит');
+            }
+            let animal = {
+                eat: function() {
+                    console.log(this.name + ' ест')
+                }
+            };
+            
+            let cat = new Animal('кот');
+            
+            //animal.constructor = Animal.prototype.constructor;
+            //Animal.prototype.eat = animal.eat;
+            
+            let dog = new Animal('собака');
+            
+            Animal.prototype.eat = animal.eat;
+            Animal.prototype.run = function() {console.log(this.name + ' бежит')};
+            Animal.hello = function(){console.log('Ququ!')};
+            console.log(cat);
+            console.log(dog);
+            
+            cat.eat();
+            dog.run();
+        </script>
+    </head>
+    
+    <body></body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            class Animal {
+                constructor(name) {
+                    this.name = name;
+                }
+                run() {
+                    console.log(this.name + ' бежит')
+                }
+                eat() {
+                    console.log(this.name + ' ест')
+                }
+            }
+            
+            let cat = new Animal('кот');
+            let dog = new Animal('собака');
+            
+            
+            
+            cat.eat();
+            dog.run();
+            
+            console.log(cat);
+            console.log(dog);
+            
+            Animal.prototype.sleep = function(){console.log(this.name + ' спит')};
+            Animal.prototype.age = 4;
+            
+            //console.log(Animal.prototype);
+            
+        </script>
+    </head>
+    
+    <body></body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            class Animal {
+                constructor(name) {
+                    this.name = name;
+                }
+                run() {
+                    console.log(this.name + ' бежит')
+                }
+                eat() {
+                    console.log(this.name + ' ест')
+                }
+            }
+            class Cat extends Animal {
+                constructor(name, color) {
+                    super();
+                    this.name = name;
+                    this.type = 'кот';
+                    this.color = color;
+                }
+                hello() {
+                    console.log(this.color + ' ' + this.type + ' ' + this.name);
+                    super.eat();
+                }
+                eat() {
+                    console.log(this.name + ' кушает мышку')
+                }
+            }
+            
+            let vaska = new Cat('Васька', 'серый');
+            
+            
+            vaska.hello();
+            //vaska.run();
+            
+            vaska.eat();
+            
+            
+            
+        </script>
+    </head>
+    
+    <body></body>
+</html>

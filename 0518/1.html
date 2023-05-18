@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            let animal = {
+                name: 'животное',
+                eat: function() {
+                    console.log(this.name + ' что-то ест')
+                }
+            };
+            let cat = {
+                name: 'кот'
+            };
+            
+            cat.__proto__ = animal;
+            
+            console.log(cat.name);
+            cat.eat();
+            console.log(cat);
+            
+            /*
+            cat.__proto__ = Math;
+            
+            console.log(cat.SQRT2);
+            */
+            //console.log(cat.__proto__);
+            
+            //for (y in cat) console.log(y);
+            
+            console.dir(cat);
+        </script>
+    </head>
+    
+    <body></body>
+</html>
