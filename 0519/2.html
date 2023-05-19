@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript & DOM</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        <div>
+            <p>
+                какой-то текст 
+                <span>
+                    какой-то текст
+                </span>
+                .
+            </p>
+            <p>какой-то текст <span>какой-то текст</span>.</p>
+            <p>какой-то текст <span>какой-то текст</span>.</p>
+            <p>какой-то текст <span>какой-то текст</span>.</p>
+        </div>
+        
+        
+        
+        <script>
+            let a = document.body.childNodes[1].childNodes[1].childNodes[1];
+            /*
+            console.dir(a);
+            let b = a[1].childNodes;
+            console.dir(b);
+            let c = b[1].childNodes;
+            console.dir(c);
+            let d = c[1];
+            console.log(d);
+            */
+            console.log(a);
+            
+            //let b = document.body.childNodes[1].childNodes[3].childNodes[1];
+            let b = document.body.children[0].children[1].children[0];
+            
+            console.log(b);
+            
+            let c = b.parentNode.previousSibling.previousSibling.childNodes[1];
+            
+            console.log(c===a);
+            
+            let d = a.parentElement.nextElementSibling.children[0];
+            
+            console.log(d===b);
+            
+        </script>
+    </body>
+</html>

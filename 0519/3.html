@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript & DOM</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            body > div {
+                margin: 100px;
+                width: 400px;
+                height: 200px;
+                background: pink;
+            }
+            .first {
+                background: blue;
+                height: 50px;
+            }
+            .second {
+                background: green;
+                height: 100px;
+            }
+            #onediv {
+                border: 1px solid red;
+            }
+        </style>
+        
+        <script>
+            let thespan = 3;
+        </script>
+    </head>
+    
+    <body>
+        <div>
+            <div class="first"></div>
+            <div class="second"></div>
+        </div>
+        
+        <!--<script>
+            document.write('<img src="" alt="">');
+        </script>-->
+        
+        <div id="onediv" data-test="test">
+            <div class="first"></div>
+            <div class="second unique">
+                <span class="second">1</span>
+                <span id="thespan">2</span>
+                <span>3</span>
+                <span>4</span>
+            </div>
+        </div>
+        
+        <p>text text text</p>
+        
+        <input name="nametest" type="checkbox" checked>
+        
+        <script>
+            let a = document.getElementById('onediv');
+            let b = document.getElementById('thespan');
+            let c = document.getElementById('onespan');
+            
+            let d = document.getElementsByTagName('p');
+            let e = document.getElementsByTagName('div');
+            let f = document.getElementsByTagName('ul');
+            
+            let g = document.getElementsByClassName('second');
+            let h = document.getElementsByClassName('noclass');
+            
+            let nnn = document.getElementsByName('nametest');
+            
+            let i = document.querySelectorAll('div > div');
+            let j = document.querySelectorAll('span.second');
+            
+            let k = document.querySelector('div > div');
+            let l = document.querySelector('span.second');
+            
+            /*
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            */
+            /*
+            console.log(thespan);
+            console.log(window.thespan);
+            */
+            /*
+            console.log(d);
+            console.log(e);
+            console.log(f);
+            console.log(g);
+            console.log(h);
+            */
+            /*
+            console.log(i);
+            console.log(j);
+            console.log(k);
+            console.log(l);
+            */
+            //console.log(l.matches('.unique > :first-child'));
+            console.dir(nnn);
+            
+            
+            document.write('<h1>тут можно</h1>');
+            
+            //setTimeout(function(){document.write('<h1>а тут уже нельзя</h1>')},0);
+            
+        </script>
+    </body>
+</html>

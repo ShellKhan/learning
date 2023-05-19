@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript & DOM</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            let a = document.documentElement.childNodes;
+            
+            function func() {
+                for (y of a) {
+                    console.dir(y);
+                }
+            }
+            func();
+        </script>
+    </head>
+    
+    <body>
+        <script>
+            console.log('====================');
+            func();
+        </script>
+    </body>
+</html>
