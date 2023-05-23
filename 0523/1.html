@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript & DOM</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            div {
+                background: pink;
+                height: 100px;
+                margin: 100px;
+            }
+            .red {
+                background: red;
+            }
+            .green {
+                background: green;
+            }
+            .blue {
+                background: blue;
+            }
+            .yellow {
+                background: yellow;
+            }
+            /*
+            .active {
+                border: 3px dashed black;
+            }
+            #onediv {
+                border: 5px dotted white;
+            }
+            */
+        </style>
+    </head>
+    
+    <body>
+        <div class="red"></div>
+        
+        <div class="green" id="onediv"></div>
+        
+        <div class="blue"></div>
+        
+        <div class="yellow"></div>
+        
+        <script>
+            let staticdivs = document.querySelectorAll('div');
+            
+            let livedivs = document.getElementsByTagName('div');
+            
+            let yellowdiv = document.querySelector('.yellow');
+            
+            let mydiv = document.getElementById('onediv');
+            
+            //yellowdiv.classList.add('active');
+            //mydiv.classList.add('active');
+            
+            //console.log(staticdivs, livedivs);
+            
+            mydiv.style.borderLeft = '5px dotted white';
+            mydiv.style.borderRight = '5px dotted black';
+            
+            
+            
+            
+        </script>
+    </body>
+</html>
