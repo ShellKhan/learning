@@ -19,12 +19,6 @@
                 cursor: default;
                 user-select: none;
             }
-/*
-tr:nth-child(even) td:nth-child(odd),
-tr:nth-child(odd) td:nth-child(even) {
-    background: gray;
-}
-*/
             th {
                 background: lightgray;
             }
@@ -162,15 +156,21 @@ tr:nth-child(odd) td:nth-child(even) {
         </table>
         
         <script>
-            let alltrs = document.getElementsByTagName('tr');
-            let alltds = [].map.call(alltrs, tr => Array.from(tr.getElementsByTagName('td')));
-            alltds.pop();
-            alltds.shift();
-            alltds.forEach(function(item, i) {
-                item.forEach(function(el, y) {
-                    if ((i + y) % 2) el.style.background = 'gray'
-                });
-            });
+            let alltds = [].map.call(document.getElementsByTagName('tr'), tr => Array.from(tr.getElementsByTagName('td')));
+            alltds.forEach((item, i) => item.forEach((el, y) => {if (!((i + y) % 2)) el.style.background = 'gray'}));
+            /*
+            document.getElementsByTagName('tr') - получаем псевдомассив строк
+            [].map.call... - заимствуем метод массива, возвращающий массив результатов
+            call(document.getElementsByTagName('tr')... - применяем заимствованный метод на нашем псевдомассиве строк
+            tr => Array.from(tr.getElementsByTagName('td')) берем строку и возвращаем массив ячеек типа td
+            получаем alltds - массив массивов ячеек типа td
+            alltds.forEach... - применяем метод массива, запускающий функцию на каждом элементе
+            (в alltds каждый элемент - массив ячеек)
+            (item, i) => item.forEach... - функция вызывает на элементе метод массива, запускающий функцию на каждом элементе
+            (в item каждый элемент - ячейка)
+            (el, y) => {if (!((i + y) % 2)) el.style.background = 'gray'} - для каждой ячейки проверяем сумму индексов строки и ячейки
+            если сумма четная - красим фон.
+            */
         </script>
     </body>
 </html>
