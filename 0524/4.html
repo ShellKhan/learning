@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript & DOM</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            div {
+                background: pink;
+                height: 200px;
+                margin: 100px;
+                padding: 50px;
+                border: 5px dashed black;
+            }
+            .red {
+                background: red;
+                overflow:auto;
+            }
+            .green {
+                background: green;
+            }
+            .blue {
+                background: blue;
+            }
+            .yellow {
+                background: yellow;
+            }
+            .gray {
+                background: gray;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="red"></div>
+        
+        <div class="green"></div>
+        
+        <div class="blue"></div>
+        
+        <div class="yellow"></div>
+        
+        <div class="gray"></div>
+        
+        <script>
+            /*
+            for (y of document.querySelectorAll('div')) {
+                y.addEventListener('click', function(e) {
+                    console.log(e.target.className);
+                });
+            }
+            document.querySelector('.blue').insertAdjacentHTML('afterend', '<div class="brown"></div>');
+            document.querySelector('.brown').addEventListener('click', function(e) {
+                console.log(e.target.className);
+            });
+            */
+            document.body.addEventListener('click', function(e) {
+                console.log(e.target.className);
+            });
+            document.querySelector('.blue').insertAdjacentHTML('afterend', '<div class="brown"></div>');
+        </script>
+    </body>
+</html>

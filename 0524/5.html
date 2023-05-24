@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript & DOM</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            div {
+                height: 100px;
+                margin: 100px;
+            }
+            .green {
+                background: green;
+            }
+            .red {
+                background: red;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="green" data-count="0"></div>
+        
+        <div class="red" data-count="0"></div>
+        
+        <script>
+            let toggleevent = new PointerEvent("toggle", {
+                bubbles: true,
+                cancelable: true,
+            });
+            
+            [].forEach.call(document.querySelectorAll('div'), item => item.addEventListener('click', function(){
+                item.dataset.count++;
+                console.log(`toggle ${item.dataset.count}`);
+                if (!(item.dataset.count % 3)) item.dispatchEvent(toggleevent);
+            }));
+            
+            document.addEventListener('toggle', function(e){
+                [].forEach.call(document.querySelectorAll('div'), item => {
+                    if (item.className == 'red') {
+                        item.className = 'green';
+                    } else {
+                        item.className = 'red';
+                    }
+                })
+            });
+            
+        </script>
+    </body>
+</html>

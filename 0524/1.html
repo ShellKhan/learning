@@ -26,6 +26,37 @@
                 top: calc(50% - 25px);
             }
         </style>
+        
+        <script>
+            "use strict"
+            function football(){
+                let ball = document.querySelector('.inner');
+                ball.style.top = 50 * Math.sign(Math.random() * 2 - 1) + parseInt(getComputedStyle(ball).top) + 'px';
+                ball.style.left = 50 * Math.sign(Math.random() * 2 - 1) + parseInt(getComputedStyle(ball).left) + 'px';
+            }
+            function logger(event) {
+                console.log(event);
+                console.log(this);
+            }
+            
+            //document.onDOMContentLoaded = () => console.log('DOM ready!');
+            /*
+            document.addEventListener('DOMContentLoaded', () => console.log('DOM ready!'));
+            document.addEventListener('DOMContentLoaded', () => console.log('DOM 2 ready!'));
+            document.addEventListener('DOMContentLoaded', () => console.log('DOM 3 ready!'));
+            document.addEventListener('DOMContentLoaded', () => console.log('DOM 4 ready!'));
+            */
+            document.addEventListener('DOMContentLoaded', logger);
+            window.onload = function(e) {
+                console.log('window ready!');
+                logger.call(this, e);
+            };
+            
+            //document.removeEventListener('DOMContentLoaded', logger);
+            //document.addEventListener('DOMContentLoaded', () => {document.querySelector('.inner').removeAttribute('onclick')});
+            document.addEventListener('DOMContentLoaded', () => {document.querySelector('.inner').setAttribute('onclick', '')});
+            //window.onload = null;
+        </script>
     </head>
     
     <body>
@@ -35,7 +66,7 @@
         </div>
         
         <script>
-            let ball = document.querySelector('.inner');
+            //let ball = document.querySelector('.inner');
             
             /*function ball_up_100px() {
                 ball.style.top = parseInt(getComputedStyle(ball).top) - 100 + 'px'
@@ -51,11 +82,13 @@
             
             let counter = 0;
             */
-            
+            /*
             function football(){
+                let ball = document.querySelector('.inner');
                 ball.style.top = 50 * Math.sign(Math.random() * 2 - 1) + parseInt(getComputedStyle(ball).top) + 'px';
                 ball.style.left = 50 * Math.sign(Math.random() * 2 - 1) + parseInt(getComputedStyle(ball).left) + 'px';
             }
+            */
         </script>
     </body>
 </html>

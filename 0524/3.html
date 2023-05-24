@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript & DOM</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        <!-- <h1><a href="https://ya.ru" onclick="clicker()">НАЖМИ МЕНЯ!</a></h1> -->
+        <h1><a href="https://ya.ru">НАЖМИ МЕНЯ!</a></h1>
+        
+        <input type="text" onfocus="ffocus()">
+        
+        <div>12345</div>
+        <script>
+            function clicker(e) {
+                event.preventDefault();
+                console.log(event);
+                console.log(e);
+                console.log('Default prevented!');
+            }
+            document.querySelector('a').addEventListener('click', clicker);
+            //console.log(event);
+            
+            
+            function ffocus() {
+                console.log('111');
+                console.log(event.target);
+                console.log(event.currentTarget);
+            }
+            document.addEventListener('focus', ffocus);
+        </script>
+    </body>
+</html>
