@@ -52,6 +52,8 @@
             
             let yellowdiv = document.querySelector('.yellow');
             
+            let bluediv = document.querySelector('.blue');
+            
             let mydiv = document.getElementById('onediv');
             
             //yellowdiv.classList.add('active');
@@ -62,8 +64,8 @@
             mydiv.style.borderLeft = '5px dotted white';
             mydiv.style.borderRight = '5px dotted black';
             
-            
-            
+            yellowdiv.style.cssText = 'border: 5px solid red; opacity: 0.5;';
+            bluediv.setAttribute('style', 'border: 5px dashed white; opacity: 0.5;');
             
         </script>
     </body>

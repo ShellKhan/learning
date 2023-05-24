@@ -157,13 +157,15 @@
         
         <script>
             let alltds = [].map.call(document.getElementsByTagName('tr'), tr => Array.from(tr.getElementsByTagName('td')));
-            alltds.forEach((item, i) => item.forEach((el, y) => {if (!((i + y) % 2)) el.style.background = 'gray'}));
             /*
             document.getElementsByTagName('tr') - получаем псевдомассив строк
             [].map.call... - заимствуем метод массива, возвращающий массив результатов
             call(document.getElementsByTagName('tr')... - применяем заимствованный метод на нашем псевдомассиве строк
             tr => Array.from(tr.getElementsByTagName('td')) берем строку и возвращаем массив ячеек типа td
             получаем alltds - массив массивов ячеек типа td
+            */
+            alltds.forEach((item, i) => item.forEach((el, y) => {if (!((i + y) % 2)) el.style.background = 'gray'}));
+            /*
             alltds.forEach... - применяем метод массива, запускающий функцию на каждом элементе
             (в alltds каждый элемент - массив ячеек)
             (item, i) => item.forEach... - функция вызывает на элементе метод массива, запускающий функцию на каждом элементе

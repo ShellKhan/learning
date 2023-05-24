@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript & DOM</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            div {
+                background: pink;
+                height: 200px;
+                margin: 100px;
+                padding: 50px;
+                border: 5px dashed black;
+            }
+            .red {
+                background: red;
+                overflow:auto;
+            }
+            .green {
+                background: green;
+            }
+            .blue {
+                background: blue;
+            }
+            .yellow {
+                background: yellow;
+            }
+            .gray {
+                background: gray;
+            }
+            @media screen and (max-width:1200px) {
+                .green {
+                    background: white;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="red">
+            <div id="qwe" style="background:white;height:50px;margin:50px;"></div>
+        </div>
+        
+        <div class="green"></div>
+        
+        <div class="blue"></div>
+        
+        <div class="yellow"></div>
+        
+        <div class="gray"></div>
+        
+        <script>
+            let r = document.querySelector('.red');
+            let q = document.querySelector('#qwe');
+            let d = document.documentElement;
+            let g = document.querySelector('.gray');
+            
+            
+            
+        </script>
+    </body>
+</html>
