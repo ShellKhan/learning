@@ -30,19 +30,32 @@
     
     <body>
         <div class="outer">
-            <div class="inner" onclick="ball_up_100px()"></div>
+            <!-- <div class="inner" onclick="ball_up_100px()"></div> -->
+            <div class="inner" onclick="football()"></div>
         </div>
         
         <script>
             let ball = document.querySelector('.inner');
             
-            function ball_up_100px() {
+            /*function ball_up_100px() {
                 ball.style.top = parseInt(getComputedStyle(ball).top) - 100 + 'px'
-            }
+            }*/
             
             //setTimeout(ball_up_100px, 1000);
             
+            /*
+            function football(){
+                ++counter;
+                console.log(Boolean(counter % 2));
+            }
             
+            let counter = 0;
+            */
+            
+            function football(){
+                ball.style.top = 50 * Math.sign(Math.random() * 2 - 1) + parseInt(getComputedStyle(ball).top) + 'px';
+                ball.style.left = 50 * Math.sign(Math.random() * 2 - 1) + parseInt(getComputedStyle(ball).left) + 'px';
+            }
         </script>
     </body>
 </html>
