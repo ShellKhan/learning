@@ -52,6 +52,7 @@
             });
             */
             let x, y, deltaX, deltaY;
+            
             elem.addEventListener('mousedown', function(e){
                 this.classList.add('inuse');
                 //console.log('start');
@@ -75,6 +76,27 @@
                     this.style.top = (e.clientY - deltaY) + 'px';
                 }
             });
+            /*
+            elem.addEventListener('touchstart', function(e){
+                this.classList.add('inuse');
+                y = this.getBoundingClientRect().top;
+                x = this.getBoundingClientRect().left;
+                deltaX = e.targetTouches[0].clientX - x;
+                deltaY = e.targetTouches[0].clientY - y;
+            });
+            elem.addEventListener('touchend', function(){
+                this.classList.remove('inuse');
+            });
+            elem.addEventListener('touchcancel', function(){
+                this.classList.remove('inuse');
+            });
+            elem.addEventListener('touchmove', function(e){
+                if (this.classList.contains('inuse')) {
+                    this.style.left = (e.targetTouches[0].clientX - deltaX) + 'px';
+                    this.style.top = (e.targetTouches[0].clientY - deltaY) + 'px';
+                }
+            });
+            */
         </script>
     </body>
 </html>

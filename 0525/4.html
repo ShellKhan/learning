@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript & Events</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            
+        </style>
+    </head>
+    
+    <body>
+        <form name="myform" id="mf">
+            <fieldset>
+                <legend>111</legend>
+                <input type="text" name="textfield1" id="f1">
+            </fieldset>
+            <input type="text" name="textfield2" id="f2">
+            <p>text text</p>
+            <hr>
+            <label>
+                <input type="text" name="textfield3" id="f3">
+                333
+            </label>
+            <textarea name="textarea1"></textarea>
+            <select>
+                <option></option>
+                <option>2</option>
+                <option value="333">3</option>
+            </select>
+            <button>qqqqq</button>
+        </form>
+        
+        
+        
+        <script>
+            document.forms.myform.textfield1.addEventListener('input', function(e){
+                //if (this.value == '') alert('Тут пусто!');
+                console.log(e);
+                console.log(this.value);
+            });
+            document.forms.myform.textarea1.addEventListener('input', function(e){
+                console.log(e);
+                console.log(this.value);
+            });
+            document.forms.myform[5].addEventListener('input', function(e){
+                console.log(e);
+                console.log(this.value);
+            });
+            //document.forms.myform.textfield1.focus();
+            /*
+            document.forms.myform.addEventListener('focus', function(e){
+                console.log(e);
+            }, true);
+            */
+            /*
+            document.forms.myform.addEventListener('focusin', function(e){
+                console.log(e);
+            });
+            */
+            document.forms.myform.addEventListener('submit', function(e){
+                e.preventDefault();
+                alert('SUBMIT!!!');
+                this.submit();
+            });
+        </script>
+    </body>
+</html>
