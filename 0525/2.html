@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript & Events</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            .outer {
+                width: 498px;
+                height: 498px;
+                margin: 100px;
+                background: pink;
+                position: relative;
+            }
+            .inner {
+                width: 48px;
+                height: 48px;
+                background: green;
+                position: absolute;
+                top: 224px;
+                left: 224px;
+            }
+            div {
+                border: 1px solid black;
+            }
+            body {
+                margin: 0;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="outer">
+            <div class="inner"></div>
+        </div>
+        
+        <script>
+            let elem = document.querySelector('.inner');
+            
+            elem.addEventListener('mouseover', function(e){
+                /*
+                getComputedStyle(this).left - положение левого края блока от края внешнего блока
+                parseInt(getComputedStyle(this).left) - превратили в число (отбросили единицу измерения)
+                parseInt(getComputedStyle(this).left) + 25 - центр блока, чтобы сравнивать с его положением
+                parseInt(getComputedStyle(this).left) + 25 + 100 - отсчет от края страницы
+                e.pageX - место курсора от края страницы
+                parseInt(getComputedStyle(this).left) + 125 - e.pageX - разница между курсором и центром блока
+                если разница положительная, курсор слева, надо сдвинуть блок вправо - увеличить его left
+                => прибавляем разницу
+                если разница отрицательная, курсор справа, надо сдвинуть блок влево - уменьшить его left
+                => прибавляем разницу
+                parseInt(getComputedStyle(this).left) + 125 - e.pageX + parseInt(getComputedStyle(this).left) + 125 - новый отсчет от края страницы
+                parseInt(getComputedStyle(this).left) * 2 + 250 - e.pageX - 100 - отсчет от края внешнего блока
+                parseInt(getComputedStyle(this).left) * 2 + 150 - e.pageX - 25 - переходим от центра к левому краю блока
+                parseInt(getComputedStyle(this).top) * 2 + 125 - e.pageY + 'px' - добавляем единицу измерения
+                */
+                this.style.left = parseInt(getComputedStyle(this).left) * 2 + 125 - e.pageX + 'px';
+                this.style.top = parseInt(getComputedStyle(this).top) * 2 + 125 - e.pageY + 'px';
+            });
+            
+            
+            
+            
+            
+        </script>
+    </body>
+</html>
