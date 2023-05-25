@@ -57,14 +57,22 @@
                 parseInt(getComputedStyle(this).left) * 2 + 150 - e.pageX - 25 - переходим от центра к левому краю блока
                 parseInt(getComputedStyle(this).top) * 2 + 125 - e.pageY + 'px' - добавляем единицу измерения
                 */
-                this.style.left = parseInt(getComputedStyle(this).left) * 2 + 125 - e.pageX + 'px';
-                this.style.top = parseInt(getComputedStyle(this).top) * 2 + 125 - e.pageY + 'px';
+                let x = parseInt(getComputedStyle(this).left) * 2 + 125 - e.pageX;
+                let y = parseInt(getComputedStyle(this).top) * 2 + 125 - e.pageY;
+                // проверяем, чтобы блок не вылезал за края внешнего блока
+                if (x < 0) {
+                    x = 0;
+                } else if (x > 448) {
+                    x = 448;
+                }
+                if (y < 0) {
+                    y = 0;
+                } else if (y > 448) {
+                    y = 448;
+                }
+                this.style.left = x + 'px';
+                this.style.top = y + 'px';
             });
-            
-            
-            
-            
-            
         </script>
     </body>
 </html>
