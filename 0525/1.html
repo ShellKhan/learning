@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>JavaScript & Events</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            /*body {
+                height: 2000px;
+            }*/
+            div {
+                position: fixed;
+                /*position: relative;*/
+                padding: 9px;
+                /*margin: 100px;*/
+                width: 100px;
+                height: 100px;
+                background: pink;
+                border: 1px solid red;
+                top: 100px;
+                left: 100px;
+            }
+            /*div div {
+                background: green;
+                height: 100px;
+                position: static;
+            }*/
+        </style>
+    </head>
+    
+    <body>
+        <div class="pink">
+            <!-- <div></div> -->
+        </div>
+        
+        <script>
+            let elem = document.querySelector('.pink');
+            /*
+            document.addEventListener('click', function(e){
+                console.log(e.clientY); // screen
+                console.log(e.offsetY); // inner space
+                console.log(e.pageY); // page
+                console.log(e.layerY); // position layer
+                console.log(e.target);
+                console.log(e);
+            });
+            */
+            let x, y, deltaX, deltaY;
+            elem.addEventListener('mousedown', function(e){
+                this.classList.add('inuse');
+                //console.log('start');
+                y = this.getBoundingClientRect().top;
+                x = this.getBoundingClientRect().left;
+                deltaX = e.clientX - x;
+                deltaY = e.clientY - y;
+            });
+            elem.addEventListener('mouseup', function(){
+                this.classList.remove('inuse');
+                //console.log('finish');
+            });
+            elem.addEventListener('mousemove', function(e){
+                if (this.classList.contains('inuse')) {
+                    //console.log('move');
+                    this.style.left = (e.clientX - deltaX) + 'px';
+                    this.style.top = (e.clientY - deltaY) + 'px';
+                }
+            });
+        </script>
+    </body>
+</html>
