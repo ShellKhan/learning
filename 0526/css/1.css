@@ -1,0 +1,29 @@
+/* basis */
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+div {
+    border: 1px solid black;
+}
+.pink {
+    background: pink;
+    height: 698px;
+    width: 698px;
+    margin: 100px auto;
+    position: relative;
+}
+.green {
+    background: green;
+    height: 48px;
+    width: 48px;
+    position: absolute;
+    top: 325px;
+    left: 325px;
+    border-radius: 50%;
+}

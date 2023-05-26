@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>jQuery</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            .outer {
+                background: green;
+                margin: 100px auto;
+                padding: 100px;
+                width: 300px;
+            }
+            .middler {
+                background: blue;
+                padding: 100px;
+                width: 100px;
+            }
+            .inner {
+                background: red;
+                height: 100px;
+                width: 100px;
+            }
+        </style>
+        
+        <script src="js/jquery-3.7.0.js"></script>
+        
+        <script>
+            function clicker(e) {
+                console.log('PRIVET!');
+                console.log(e.target);
+                console.log(this);
+            }
+            function clicker2(e) {
+                console.log(e.target);
+                console.log(this);
+            }
+            $(function() {
+                $('.outer').on('click', '.inner', clicker);
+            });
+            document.addEventListener('click', clicker2);
+        </script>
+    </head>
+    
+    <body>
+        <div class="outer">
+            <div class="middler">
+                <div class="inner"></div>
+            </div>
+        </div>
+    </body>
+</html>
