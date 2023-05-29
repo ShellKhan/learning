@@ -13,36 +13,46 @@
     <body>
         <div class="calc">
             <div class="screen">0</div>
+            <div class="indicator">memory</div>
             
             <div class="button clear">C</div>
+            <!--
+            Вместо кнопки MC надо сделать кнопку CE
+            Новая кнопка должна быть красной и делать следующее:
+            1) обнулять screen
+            2) сбрасывать actionsign
+            3) поднимать screenemptyflag
+            Кнопка MR теперь должна не только выводить содержимое memory на screen (как сейчас),
+            но еще и обнулять его, а также гасить индикатор
+            -->
             <div class="button memory">MC</div>
             <div class="button memory">MR</div>
             <div class="button memory">M+</div>
             <div class="button memory">M-</div>
             
-            <div class="button simple">&radic;x</div>
+            <div class="button simple" data-action="sqr">&radic;x</div>
             <div class="button digit">7</div>
             <div class="button digit">8</div>
             <div class="button digit">9</div>
-            <div class="button action">&divide;</div>
+            <div class="button action" data-action="div">&divide;</div>
             
-            <div class="button simple">x&sup2;</div>
+            <div class="button simple" data-action="squ">x&sup2;</div>
             <div class="button digit">4</div>
             <div class="button digit">5</div>
             <div class="button digit">6</div>
-            <div class="button action">&times;</div>
+            <div class="button action" data-action="mul">&times;</div>
             
-            <div class="button simple">1/x</div>
+            <div class="button simple" data-action="1/x">1/x</div>
             <div class="button digit">1</div>
             <div class="button digit">2</div>
             <div class="button digit">3</div>
-            <div class="button action">&minus;</div>
+            <div class="button action" data-action="min">&minus;</div>
             
             <div class="button sign">&plus;/&minus;</div>
             <div class="button digit">0</div>
             <div class="button point">&period;</div>
             <div class="button eval">&equals;</div>
-            <div class="button action">&plus;</div>
+            <div class="button action" data-action="plu">&plus;</div>
         </div>
     </body>
 </html>
