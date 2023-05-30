@@ -1,4 +1,5 @@
 let btnflag = false;
+let laststep;
 let errorflag = false;
 let screenemptyflag = true;
 let screenaim;
@@ -33,6 +34,17 @@ function btn_clear() {
     memoryaim.classList.remove('active');
     actionsign = null;
     actionargument = null;
+    laststep = 'clear';
+}
+function btn_ce() {
+    if (['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'point', 'sign', 'MR'].includes(laststep)) {
+        screenaim.innerHTML = 0;
+        screenemptyflag = true;
+    } else if (['div', 'mul', 'min', 'plu'].includes(laststep)) {
+        actionsign = null;
+        actionargument = null;
+    }
+    laststep = 'ce';
 }
 function btn_digit(point) {
     let newdigit = point.innerHTML;
@@ -44,12 +56,14 @@ function btn_digit(point) {
     } else if (screenaim.innerHTML.replace(/\D/g, '').length < 12) {
         screenaim.innerHTML += newdigit;
     }
+    laststep = newdigit;
 }
 function btn_point() {
     if (screenaim.innerHTML.indexOf('.') === -1) {
         screenaim.innerHTML += '.';
         screenemptyflag = false;
     }
+    laststep = 'point';
 }
 function btn_sign() {
     if (screenaim.innerHTML[0] === '-') {
@@ -57,6 +71,7 @@ function btn_sign() {
     } else {
         screenaim.innerHTML = '-' + screenaim.innerHTML;
     }
+    laststep = 'sign';
 }
 function btn_simple(point) {
     let x = +screenaim.innerHTML;
@@ -73,6 +88,7 @@ function btn_simple(point) {
     }
     render(x);
     screenemptyflag = true;
+    laststep = point.dataset.action;
 }
 function btn_action(point) {
     if (actionsign) {
@@ -81,6 +97,7 @@ function btn_action(point) {
     actionsign = point.dataset.action;
     actionargument = +screenaim.innerHTML;
     screenemptyflag = true;
+    laststep = point.dataset.action;
 }
 function btn_eval() {
     let res = +screenaim.innerHTML;
@@ -102,17 +119,20 @@ function btn_eval() {
     actionargument = null;
     render(res);
     screenemptyflag = true;
+    laststep = 'eval';
 }
 function btn_memory(point) {
     switch(point.innerHTML) {
-        case 'MC':
-        memory = null;
-        memoryaim.classList.remove('active');
-        break;
         case 'MR':
         if (memory !== null) {
-            render(memory);
-            screenemptyflag = true;
+            if (laststep === 'MR') {
+                memory = null;
+                memoryaim.classList.remove('active');
+            } else {
+                render(memory);
+                screenemptyflag = true;
+            }
+            laststep = 'MR';
         }
         break;
         case 'M+':
@@ -125,6 +145,7 @@ function btn_memory(point) {
         memory += +screenaim.innerHTML;
         memoryaim.classList.add('active');
         screenemptyflag = true;
+        laststep = 'M+';
         break;
         case 'M-':
         if (actionsign) {
@@ -136,6 +157,7 @@ function btn_memory(point) {
         memory -= screenaim.innerHTML;
         memoryaim.classList.add('active');
         screenemptyflag = true;
+        laststep = 'M-';
         break;
     }
 }
@@ -150,6 +172,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 btn_clear();
             } else if (!errorflag) {
                 switch(e.target.className.split(' ')[1]) {
+                    case 'ce':
+                    btn_ce();
+                    break;
                     case 'memory':
                     btn_memory(e.target);
                     break;
