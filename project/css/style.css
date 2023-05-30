@@ -1,0 +1,44 @@
+/* global reset */
+html, body, body div, div, span, h1, h2, h3, h4, h5, h6, p, a, em, img, small, strike, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, aside, section, article, header, footer, main, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+    box-sizing: content-box;
+}
+ol, ul, li {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+input, textarea {
+    font: inherit;
+    box-sizing: border-box;
+}
+
+/* main */
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    flex: none;
+    height: 100px;
+    background: blue;
+}
+main {
+    flex: 1 1 auto;
+}
+footer {
+    flex: none;
+    height: 100px;
+    background: gray;
+}
