@@ -5,12 +5,19 @@ let actionend;
 
 /* main */
 document.addEventListener('DOMContentLoaded', function() {
-    actionTimer(actionend);
-    setTimeout(function ac_tim() {
+    if (document.querySelector('.actiontimer')) { // проверяем, что на текущей странице есть нужный элемент. поскольку файл скриптов общий, на каких-то страницах может не быть нужного (в данном случае - таймера акции).
         actionTimer(actionend);
-        setTimeout(ac_tim, 950);
-    }, 950);
-    
+        setTimeout(function ac_tim() {
+            actionTimer(actionend);
+            setTimeout(ac_tim, 950);
+        }, 950);
+    }
+    if (document.querySelector('.sliderwindow')) {
+        setTimeout(function sld() {
+            sliderGo();
+            setTimeout(sld, 5000);
+        }, 5000);
+    }
     
     
     
@@ -31,6 +38,20 @@ function actionTimer(end) {
     delta = Math.floor(delta / 24);
     // document.querySelector('.actiontimer').innerHTML = `<b>${delta}</b>${grammatics(delta, 'день', 'дня', 'дней')}<b>${hours}</b>${grammatics(hours, 'час', 'часа', 'часов')}<b>${addZero(minutes)}</b>${grammatics(minutes, 'минута', 'минуты', 'минут')}<b>${addZero(seconds)}</b><span>${grammatics(seconds, 'секунда', 'секунды', 'секунд')}</span>`;
     document.querySelector('.actiontimer').innerHTML = "<b>" + delta + "</b>" + grammatics(delta, 'день', 'дня', 'дней') +"<b>" + hours + "</b>" + grammatics(hours, 'час', 'часа', 'часов') + "<b>" + addZero(minutes) + "</b>" +grammatics(minutes, 'минута', 'минуты', 'минут') + "<b>" + addZero(seconds) + "</b><span>" + grammatics(seconds, 'секунда', 'секунды', 'секунд') + "</span>";
+}
+
+/* slider */
+function sliderGo() {
+    let slides = Array.from(document.querySelectorAll('.sliderwindow .slide'));
+    let idx = slides.indexOf(document.querySelector('.sliderwindow .next'));
+    idx++;
+    idx %= slides.length;
+    document.querySelector('.sliderwindow .prev').classList.remove('prev');
+    document.querySelector('.sliderwindow .current').classList.add('prev');
+    document.querySelector('.sliderwindow .current').classList.remove('current');
+    document.querySelector('.sliderwindow .next').classList.add('current');
+    document.querySelector('.sliderwindow .next').classList.remove('next');
+    slides[idx].classList.add('next');
 }
 
 /* utilites */

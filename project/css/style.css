@@ -169,9 +169,27 @@ section.action {
     width: auto;
 }
 
-
-
-
+/* slider */
+.sliderwindow {
+    width: 450px;
+    height: 600px;
+    margin: 16px auto;
+    overflow: hidden;
+    position: relative;
+    background: pink;
+}
+.slide {
+    width: 450px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 3s ease;
+}
+.slide.current {
+    opacity: 1;
+}
 
 
 
