@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'icomoon';
+  src:
+    url('../fonts/icomoon.woff?jvnwov') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
 /* global reset */
 html, body, body div, div, span, h1, h2, h3, h4, h5, h6, p, a, em, img, small, strike, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, aside, section, article, header, footer, main, input, textarea, button {
     margin: 0;
@@ -28,17 +37,99 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    font-family: 'icomoon', Arial;
 }
 header {
     flex: none;
-    height: 100px;
-    background: blue;
+    background: #00f;
 }
 main {
     flex: 1 1 auto;
 }
 footer {
     flex: none;
-    height: 100px;
-    background: gray;
+    background: #777;
 }
+.container {
+    margin: 0 auto;
+    padding: 16px;
+    width: 1168px;
+}
+
+/* header */
+header .top {
+    height: 30px;
+}
+header .middle {
+    height: 30px;
+}
+.topmenu {
+    display: flex;
+    gap: 10px;
+}
+.topmenu a {
+    flex: none;
+    height: 30px;
+    border-radius: 5px;
+    background: #fff;
+    color: #00f;
+    text-decoration: none;
+    padding: 5px 20px;
+    line-height: 30px;
+}
+.topmenu .current {
+    font-weight: bold;
+    cursor: default;
+}
+.topmenu a:before {
+    margin-right: 8px;
+    opacity: .5;
+}
+.topmenu .home:before {
+  content: "\e900";
+}
+.topmenu .catalog:before {
+  content: "\e902";
+}
+.topmenu .product:before {
+  content: "\e901";
+}
+.topmenu .order:before {
+  content: "\e903";
+}
+.topmenu .contacts:before {
+  content: "\e904";
+}
+.topmenu a:not(.current):hover {
+    color: #007;
+}
+.topmenu a:not(.current):hover span {
+    text-decoration: underline;
+}
+
+/* footer */
+footer .top {
+    height: 30px;
+}
+footer .copy {
+    line-height: 30px;
+    font-style: italic;
+    color: #fff;
+    opacity: .4;
+    margin: 0;
+}
+.bottommenu {
+    display: flex;
+    gap: 20px;
+}
+.bottommenu a {
+    flex: none;
+    color: #fff;
+    text-decoration: none;
+    line-height: 40px;
+}
+.bottommenu .current {
+    font-weight: bold;
+    cursor: default;
+}
+
