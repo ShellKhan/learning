@@ -133,3 +133,46 @@ footer .copy {
     cursor: default;
 }
 
+/* action & timer */
+section.action {
+    background: #f00;
+    color: #ff0;
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+}
+.actiontext {
+    font-size: 24px;
+    line-height: 48px;
+    height: 48px;
+}
+.actiontimer {
+    display: inline-block;
+    vertical-align: baseline;
+    height: 48px;
+}
+.actiontimer span {
+    display: inline-block;
+    vertical-align: baseline;
+    text-align: left;
+    width: 100px;
+}
+.actiontimer b {
+    display: inline-block;
+    vertical-align: baseline;
+    text-align: right;
+    width: 45px;
+    font-size: 40px;
+    margin: 0 8px;
+}
+.actiontimer b:first-child {
+    width: auto;
+}
+
+
+
+
+
+
+
+
