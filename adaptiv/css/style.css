@@ -81,7 +81,7 @@ footer section {
 .f_wrap {
     border-top: 1px solid rgba(255,255,255,.4);
 }
-footer ul {
+footer ol {
     display: flex;
     justify-content: space-between;
 }
@@ -144,7 +144,7 @@ h1 {
     footer section {
         width: 520px;
     }
-    footer ul {
+    footer ol {
         display: block;
     }
     footer li {
@@ -180,7 +180,7 @@ h1 {
         width: auto;
         padding: 32px 0;
     }
-    footer ul {
+    footer ol {
         padding-left: 20px;
     }
     footer li {

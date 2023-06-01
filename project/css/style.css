@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'icomoon';
   src:
-    url('../fonts/icomoon.woff?jvnwov') format('woff');
+    url('../fonts/icomoon.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -54,6 +54,9 @@ footer {
     margin: 0 auto;
     padding: 16px;
     width: 1168px;
+}
+button {
+    font-family: 'icomoon', Arial;
 }
 
 /* header */
@@ -184,12 +187,86 @@ section.action {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0;
-    transition: all 3s ease;
+    /* opacity: 0;
+    transition: all 1.5s ease; */
+    z-index: -1;
+    /* transition: left 1.5s ease, z-index 1.5s step-end; */
 }
 .slide.current {
-    opacity: 1;
+    /* opacity: 1; */
+    z-index: 1;
 }
+.slide.next {
+    /* z-index: 1; */
+    left: 100%;
+    /* transition: left 1.5s ease, z-index 1.5s step-end; */
+}
+.slide.prev {
+    /* z-index: 1; */
+    left: -100%;
+}
+.slidercontrols {
+    width: 650px;
+    height: 600px;
+    margin: -616px auto 16px;
+    position: relative;
+    z-index: 1;
+}
+.slidercontrols button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50px;
+    width: 50px;
+    color: transparent;
+    left: 0;
+    font-size: 50px;
+    line-height: 50px;
+    cursor: pointer;
+}
+.slidercontrols .next {
+    left: auto;
+    right: 0;
+}
+.slidercontrols .next {
+    left: auto;
+    right: 0;
+}
+.slidercontrols:hover button {
+    color: #777;
+}
+.slidercontrols .pointers {
+    display: flex;
+    gap: 16px;
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.slidercontrols .pointers span {
+    height: 40px;
+    width: 40px;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.slidercontrols:hover .pointers span {
+    border-color: #777;
+}
+.slidercontrols .pointers span:hover {
+    background: #777;
+}
+.slidercontrols:hover .pointers span.current {
+    cursor: default;
+    background: #777;
+}
+
+
+
+
+
+
+
 
 
 

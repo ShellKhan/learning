@@ -9,6 +9,10 @@
         
         <link rel="stylesheet" href="css/style.css">
         
+        <script src="js/jquery-3.7.0.min.js"></script>
+        
+        <script src="js/slider.js"></script>
+        
         <script src="js/main.js"></script>
         
         <script>
@@ -39,12 +43,22 @@
                     </div>
                 </div>
             </section>
-            <section class="slider">
+            <section class="slider" id="slider1" data-time="3000">
                 <div class="sliderwindow">
-                    <img class="slide current" src="images/1.jpg" alt="first image">
-                    <img class="slide next" src="images/2.jpg" alt="second image">
+                    <img class="slide" src="images/1.jpg" alt="first image">
+                    <img class="slide" src="images/2.jpg" alt="second image">
                     <img class="slide" src="images/3.jpg" alt="third image">
-                    <img class="slide prev" src="images/4.jpg" alt="fourth image">
+                    <img class="slide" src="images/4.jpg" alt="fourth image">
+                </div>
+                <div class="slidercontrols">
+                    <button type="button" class="prev">&#xe905;</button>
+                    <button type="button" class="next">&#xe906;</button>
+                    <div class="pointers">
+                        <!-- <span></span> -->
+                        <!-- <span></span> -->
+                        <!-- <span></span> -->
+                        <!-- <span></span> -->
+                    </div>
                 </div>
             </section>
             <section class="content"></section>
