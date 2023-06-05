@@ -27,6 +27,25 @@ $(function() {
         }, 1000);
     }*/
     
+    $('.catalog .changeview').on('click', function() {
+        $('.catalog').toggleClass('line');
+    });
+    
+    $('.accordion h3 span').on('click', function() {
+        $('.accordion').toggleClass('open');
+    });
+    
+    $('.accordion li > span').on('click', function() {
+        let point = $(this).parent();
+        if (point.hasClass('open')) {
+            point.removeClass('open');
+            point.find('.open').removeClass('open');
+        } else {
+            point.parent().find('.open').removeClass('open');
+            point.addClass('open');
+        }
+    });
+    
 });
 /*
 document.addEventListener('DOMContentLoaded', function() {

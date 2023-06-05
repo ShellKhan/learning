@@ -57,6 +57,19 @@ footer {
 }
 button {
     font-family: 'icomoon', Arial;
+    cursor: pointer;
+}
+nav a {
+    flex: none;
+    text-decoration: none;
+}
+nav .current {
+    font-weight: bold;
+    cursor: default;
+}
+h1 {
+    font-size: 48px;
+    margin-bottom: 24px;
 }
 
 /* header */
@@ -71,18 +84,12 @@ header .middle {
     gap: 10px;
 }
 .topmenu a {
-    flex: none;
     height: 30px;
     border-radius: 5px;
     background: #fff;
     color: #00f;
-    text-decoration: none;
     padding: 5px 20px;
     line-height: 30px;
-}
-.topmenu .current {
-    font-weight: bold;
-    cursor: default;
 }
 .topmenu a:before {
     margin-right: 8px;
@@ -126,14 +133,8 @@ footer .copy {
     gap: 20px;
 }
 .bottommenu a {
-    flex: none;
     color: #fff;
-    text-decoration: none;
     line-height: 40px;
-}
-.bottommenu .current {
-    font-weight: bold;
-    cursor: default;
 }
 
 /* action & timer */
@@ -261,13 +262,281 @@ section.action {
     background: #777;
 }
 
+/* catalog */
+.catalog section {
+    overflow: hidden;
+}
+.catalog aside {
+    float: left;
+    width: 292px;
+}
+.catalog article {
+    margin-left: 308px;
+}
+.catalog .changeview {
+    font-size: 32px;
+    line-height: 48px;
+    margin-left: 32px;
+    float: right;
+    color: #999;
+    position: relative;
+}
+.catalog .changeview::before {
+    width: 48px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: '\e908';
+}
+.line .changeview::before {
+    content: '\e907';
+}
+.catalog_content {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    gap: 20px;
+}
+.catalog_item {
+    width: 180px;
+    height: 490px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,.25);
+    position: relative;
+}
+.catalog_item:hover {
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,.25);
+}
+.catalog_item > img {
+    width: 180px;
+}
+.catalog_item h4 {
+    font-size: 24px;
+    font-weight: bold;
+}
+.catalog_item p {
+    color: #999;
+}
+.catalog_item .price {
+    color: #f00;
+    font-size: 32px;
+    font-weight: bold;
+}
+.catalog_item .price::after {
+    content: "\20BD";
+    margin-left: 8px;
+}
+.catalog_item .item_shadow {
+    display: none;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.25)
+}
+.catalog_item:hover .item_shadow {
+    display: block;
+}
+.item_shadow a,
+.item_shadow button {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    padding: 4px 8px;
+}
+.item_shadow a {
+    text-decoration: none;
+    top: 180px;
+}
+.item_shadow button {
+    bottom: 180px;
+}
+.line .catalog_content {
+    display: block;
+}
+.line .catalog_item {
+    width: 100%;
+    height: 220px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.line .catalog_item > img {
+    width: auto;
+    height: 220px;
+    float: left;
+    margin-right: 10px;
+}
+.line .item_shadow a {
+    top: 100px;
+    left: 240px;
+    right: auto;
+}
+.line .item_shadow button {
+    bottom: 100px;
+    left: auto;
+    right: 240px;
+}
+
+/* accordion */
+.accordion h3 {
+    color: #00f;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 16px;
+}
+.accordion h3 span {
+    float: right;
+    position: relative;
+    width: 17px;
+    height: 17px;
+    margin: 9px 0 6px 8px;
+}
+.accordion h3 span::before,
+.accordion h3 span::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #00f;
+    height: 7px;
+    content: '';
+    transition: all .5s ease;
+}
+.accordion h3 span::before {
+    top: 0;
+    transform-origin: -1px 2.5px;
+}
+.accordion h3 span::after {
+    border-bottom: 1px solid #00f;
+    bottom: 0;
+    transform-origin: -0.5px 6px;
+}
+.accordion.open h3 span::before {
+    transform: rotate(45deg) scale(1.2);
+}
+.accordion.open h3 span::after {
+    transform: rotate(-45deg) scale(1.2);
+    border-top-width: 0;
+}
+.accordion li {
+    position: relative;
+    padding-right: 24px;
+}
+.accordion li > span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url('../images/plus.png') center top no-repeat;
+}
+.accordion li.open > span {
+    background: url('../images/minus.png') center no-repeat;
+}
+.accordion .level1 {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 16px;
+    display: none;
+}
+.accordion.open .level1 {
+    display: block;
+}
+.accordion li.level1 > span {
+    width: 32px;
+    background-size: 16px;
+    background-position-y: 8px;
+}
+.accordion .level2 {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    display: none;
+}
+.level1.open .level2 {
+    display: block;
+}
+.accordion li.level2 > span {
+    width: 24px;
+    background-size: 12px;
+    background-position-y: 6px;
+}
+.accordion .level3 {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 8px;
+    display: none;
+}
+.level2.open .level3 {
+    display: block;
+}
+.accordion .level1 > ul {
+    margin-top: 12px;
+}
+.accordion .level2 > ul {
+    margin-top: 8px;
+}
 
 
 
+/* adaptivity */
+@media screen and (max-width:1219px) {
+    .container {
+        width: 968px;
+    }
+    .catalog_content {
+        grid-template-columns: repeat(3, 200px);
+        gap: 30px;
+    }
+}
 
 
 
+@media screen and (max-width:1019px) {
+    .container {
+        width: 738px;
+    }
+    .catalog_content {
+        grid-template-columns: repeat(2, 200px);
+    }
+}
 
 
+
+@media screen and (max-width:919px) {
+    .container {
+        width: 700px;
+    }
+    .actiontext {
+        font-size: 16px;
+        line-height: 32px;
+        height: 32px;
+    }
+    .actiontimer {
+        height: 32px;
+    }
+    .actiontimer span {
+        width: 70px;
+    }
+    .actiontimer b {
+        width: 30px;
+        font-size: 24px;
+    }
+    .catalog aside {
+        float: left;
+        width: 264px;
+    }
+    .catalog article {
+        margin-left: 280px;
+    }
+    .catalog_content {
+        gap: 20px;
+    }
+}
 
 
