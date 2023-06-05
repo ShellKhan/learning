@@ -70,6 +70,7 @@ nav .current {
 h1 {
     font-size: 48px;
     margin-bottom: 24px;
+    padding-right: 56px;
 }
 
 /* header */

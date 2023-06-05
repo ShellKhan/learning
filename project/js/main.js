@@ -27,9 +27,21 @@ $(function() {
         }, 1000);
     }*/
     
-    $('.catalog .changeview').on('click', function() {
-        $('.catalog').toggleClass('line');
-    });
+    if ($('.catalog .changeview').length) {
+        if (localStorage.getItem('catalogview')) {
+            $('.catalog').addClass('line');
+        } else {
+            $('.catalog').removeClass('line');
+        }
+        
+        $('.catalog .changeview').on('click', function() {
+            $('.catalog').toggleClass('line');
+            toggleLocalStorage('catalogview', 'line');
+        });
+    }
+    
+    
+    
     
     $('.accordion h3 span').on('click', function() {
         $('.accordion').toggleClass('open');
@@ -117,6 +129,12 @@ function grammatics(num, form1, form2, form3) {
     if (![12, 13, 14].includes(num) && [2, 3, 4].includes(num % 10)) return form2;
     return form3;
 }
-
+function toggleLocalStorage(key, value) {
+    if (localStorage.getItem(key)) {
+        localStorage.removeItem(key);
+    } else {
+        localStorage.setItem(key, value);
+    }
+}
 
 
