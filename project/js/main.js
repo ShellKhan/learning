@@ -40,9 +40,6 @@ $(function() {
         });
     }
     
-    
-    
-    
     $('.accordion h3 span').on('click', function() {
         $('.accordion').toggleClass('open');
     });
@@ -57,6 +54,14 @@ $(function() {
             point.addClass('open');
         }
     });
+    
+    $('.gallery').each(function() {
+        makeGallery($(this));
+    });
+    
+    
+    
+    
     
 });
 /*
@@ -80,8 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
 });
 */
-
-
 
 /* action timer */
 function actionTimer(end) {

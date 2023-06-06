@@ -483,6 +483,82 @@ section.action {
     margin-top: 8px;
 }
 
+/* product card */
+.product > section {
+    display: grid;
+    height: calc(100% - 32px);
+    gap: 20px;
+    grid-template-columns: 410px auto;
+}
+.product .pics {
+    grid-area: 1 / 1 / 2 / 2;
+}
+.product .buybtn {
+    grid-area: 1 / 2 / 2 / 3;
+    background: green;
+}
+.product .info {
+    grid-area: 2 / 1 / 3 / 3;
+    background: blue;
+}
+.pics .desk {
+    height: 400px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #77f;
+    margin-bottom: 10px;
+}
+.gallery {
+    position: relative;
+}
+.gallery .gal_btn {
+    height: 52px;
+    width: 29px;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 52px;
+    text-align: center;
+    color: #77f;
+    user-select: none;
+}
+.gallery .gal_btn.left {
+    left: 0;
+}
+.gallery .gal_btn.right {
+    right: 0;
+}
+.gallery .gal_btn.disabled {
+    color: #999;
+    cursor: default;
+}
+.gallery .gal_window {
+    width: 352px;
+    height: 52px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 29px;
+}
+.gallery .gal_rail {
+    height: 52px;
+    width: 10000px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.gallery img {
+    display: block;
+    float: left;
+    margin: 0 8px 0 0;
+    border: 1px solid #77f;
+}
+
+
+
 
 
 /* adaptivity */

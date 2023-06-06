@@ -18,6 +18,7 @@ function makeSlider(slider) { // функция, создающая и запу�
         let curr = slider.find('.sliderwindow .current');
         let next = slider.find('.sliderwindow .next');
         let prev = slider.find('.sliderwindow .prev');
+        let newtime = time; // делаем отдельное время для текущей анимации
         
         if (typeof param === 'number') { // если параметр при запуске - число, делаем проверки
             let hlp = slides.eq(param);
@@ -28,6 +29,7 @@ function makeSlider(slider) { // функция, создающая и запу�
                 next.removeClass('next');
                 next = hlp;
             } // иначе действуем, как если бы параметр был 'next'
+            newtime /= 4; // если у нас функция вызвана кнопкой, текущая анимация быстрее
         }
         
         // измеряем ширину блока и создаем значение для вызова анимации в зависимости от нашего параметра
@@ -35,7 +37,7 @@ function makeSlider(slider) { // функция, создающая и запу�
         if (param === 'prev') w = '+=' + curr.width();
         
         // запускаем анимации на current, next и prev
-        next.css('zIndex', '1').animate({left: w}, time, function() { // по окончании анимации делаем дополнительные действия
+        next.css('zIndex', '1').animate({left: w}, newtime, function() { // по окончании анимации делаем дополнительные действия
             if (param === 'prev') {
                 next.removeClass('next').css({zIndex: '', left: ''}); // убираем ненужный класс и инлайновые стили
             } else {
@@ -48,7 +50,7 @@ function makeSlider(slider) { // функция, создающая и запу�
                 slides.eq(idx).addClass('next'); // присваиваем новый класс next
             }
         });
-        prev.css('zIndex', '1').animate({left: w}, time, function() { // аналогично next
+        prev.css('zIndex', '1').animate({left: w}, newtime, function() { // аналогично next
             if (param === 'prev') {
                 prev.addClass('current').removeClass('prev').css({zIndex: '', left: ''});
                 let idx = slides.index(prev);
@@ -61,7 +63,7 @@ function makeSlider(slider) { // функция, создающая и запу�
                 prev.removeClass('prev').css({zIndex: '', left: ''});
             }
         });
-        curr.css('zIndex', '1').animate({left: w}, time, function() { // аналогично next
+        curr.css('zIndex', '1').animate({left: w}, newtime, function() { // аналогично next
             if (param === 'prev') {
                 curr.removeClass('current').addClass('next').css({zIndex: '', left: ''});
             } else {
