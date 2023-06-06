@@ -59,7 +59,32 @@ $(function() {
         makeGallery($(this));
     });
     
+    $('.mainimagedesk img').on('click', function() {
+        lightBox(this);
+    });
     
+    $('.idtovar button').on('click', function() {
+        // получаем сведения о товаре
+        let tovar = {
+            id: $(this).parents('.idtovar').data('tovarid'),
+            name: $(this).parents('.idtovar').find('.tovarname').html(),
+            price: $(this).parents('.idtovar').find('.price').html(),
+            quantity: 1
+        }
+        // здесь должна быть отправка сведений о товаре на бэк-энд, но мы ее не делаем
+        // зато мы можем передать эти сведения в корзину
+        let basket = JSON.parse(localStorage.getItem('basket'));
+        if (!basket) basket = [];
+        let idx = basket.findIndex(item => item.id == tovar.id);
+        if (idx < 0) {
+            basket.push(tovar);
+        } else {
+            basket[idx].quantity += tovar.quantity;
+        }
+        localStorage.setItem('basket', JSON.stringify(basket));
+        console.log(localStorage.getItem('basket'));
+        console.log(JSON.parse(localStorage.getItem('basket')));
+    });
     
     
     
@@ -122,6 +147,25 @@ function sliderGo() {
 }
 */
 
+/* lightbox */
+function lightBox(curimage) {
+    getModalWindow('lightbox');
+    let bigimage = curimage.src.replace('_mid.', '_big.'); // вычисляем имя большой картинки
+    let w, wfix, h, hfix, sides;
+    w = document.documentElement.clientWidth - 100; // определяем максимальную доступную ширину
+    h = document.documentElement.clientHeight - 100; // определяем максимальную доступную высоту
+    sides = $(curimage).width() / $(curimage).height(); // определяем соотношение сторон картинки
+    if (w > sides * h) { // если по соотношению сторон доступная ширина больше нужной
+        wfix = Math.floor(sides * h); // вычисляем нужную ширину
+        hfix = h;
+    } else { // если по соотношению сторон доступная ширина меньше нужной
+        wfix = w
+        hfix = Math.floor(w / sides); // вычисляем нужную высоту
+    }
+    // прописываем размеры модалке, вставляем в нее картинку, добавляем класс для плавного проявления
+    $('#lightbox').css({width: wfix, height: hfix}).append(`<img src="${bigimage}">`).addClass('ready');
+}
+
 /* utilites */
 function addZero(num) {
     return num >= 10 ? num : '0' + num;
@@ -138,6 +182,13 @@ function toggleLocalStorage(key, value) {
     } else {
         localStorage.setItem(key, value);
     }
+}
+function getModalWindow(idname) {
+    $('body').append('<div class="screener"></div><div class="modal" id="'+idname+'"><button type="button" class="close">&times;</button></div>');
+    $('.screener, .modal .close').on('click', dropModalWindow);
+}
+function dropModalWindow() {
+    $('.screener, .modal').remove();
 }
 
 

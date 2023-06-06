@@ -493,15 +493,13 @@ section.action {
 .product .pics {
     grid-area: 1 / 1 / 2 / 2;
 }
-.product .buybtn {
+.product .buy {
     grid-area: 1 / 2 / 2 / 3;
-    background: green;
 }
 .product .info {
     grid-area: 2 / 1 / 3 / 3;
-    background: blue;
 }
-.pics .desk {
+.pics .mainimagedesk {
     height: 400px;
     width: 400px;
     display: flex;
@@ -555,7 +553,88 @@ section.action {
     float: left;
     margin: 0 8px 0 0;
     border: 1px solid #77f;
+    cursor: pointer;
 }
+.buy .price {
+    color: #f00;
+    font-size: 48px;
+    font-weight: bold;
+}
+.buy .price::after {
+    content: "\20BD";
+    margin-left: 8px;
+}
+.buy button {
+    background: #f00;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+    box-shadow: 0 0 5px rgba(0,0,0,.25);
+}
+.buy button:active {
+    box-shadow: inset 0 0 5px rgba(0,0,0,.25);
+}
+
+
+
+
+
+/* modals */
+.screener {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(100, 100, 100, .75);
+}
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 10px;
+    padding: 40px;
+}
+.modal .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    color: red;
+    font-size: 40px;
+    line-height: 40px;
+    box-shadow: 0 0 5px rgba(0,0,0,.25);
+}
+.modal .close:active {
+    box-shadow: inset 0 0 5px rgba(0,0,0,.25);
+}
+
+/* lightbox */
+#lightbox img {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 2s;
+}
+#lightbox.ready img {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
 
 
 

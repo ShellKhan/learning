@@ -35,20 +35,24 @@
             </div>
         </header>
         
-        <main class="product">
+        <main class="product idtovar" data-tovarid="222322223">
             <section class="container">
                 <div class="pics">
-                    <div class="desk">
-                        <img src="images/rubens_mid.jpg" alt="croco&hippo">
+                    <div class="mainimagedesk">
+                        <img src="images/rubens_mid.jpg" alt="main image">
                     </div>
                     
                     <div class="gallery">
                         <div class="gal_btn left disabled">&lt;</div>
+                        
                         <div class="gal_window">
                             <div class="gal_rail">
-                                <img src="images/rubens_small.jpg" alt="croco&hippo">
-                                <img src="images/misha_small.jpg" alt="misha">
-                                <img src="images/derevo_small.jpg" alt="derevo">
+                                <!-- <img src="images/rubens_small.jpg" alt="croco&hippo" data-image="images/rubens_mid.jpg"> -->
+                                <img src="images/rubens_small.jpg" alt="croco&hippo" data-image="images/rubens_mid.jpg">
+                                <!-- <img src="images/misha_small.jpg" alt="misha" data-image="images/misha_mid.jpg"> -->
+                                <img src="images/misha_small.jpg" alt="misha" data-image="images/misha_mid.jpg">
+                                <!-- <img src="images/derevo_small.jpg" alt="derevo" data-image="images/derevo_mid.jpg"> -->
+                                <img src="images/derevo_small.jpg" alt="derevo" data-image="images/derevo_mid.jpg">
                                 <img src="images/rubens_small.jpg" alt="croco&hippo">
                                 <img src="images/misha_small.jpg" alt="misha">
                                 <img src="images/derevo_small.jpg" alt="derevo">
@@ -57,16 +61,21 @@
                                 <img src="images/derevo_small.jpg" alt="derevo">
                             </div>
                         </div>
+                        
                         <div class="gal_btn right">&gt;</div>
                     </div>
                 </div>
                 
-                <div class="buybtn">
-                    
+                <div class="buy">
+                    <h1 class="tovarname">Название товара</h1>
+                    <p class="price">1000</p>
+                    <p>Здесь мы кратко описываем товар.</p>
+                    <button type="button">КУПИТЬ!!!</button>
                 </div>
                 
                 <div class="info">
-                    
+                    <h2>Дополнительная информация</h2>
+                    <p>Здесь размещаем подробное описание товара и всякие его характеристики, а также прочее разное.</p>
                 </div>
             </section>
         </main>
