@@ -1,14 +1,8 @@
-/* variables */
-let actionend;
-
-
-
-/* main */
 $(function() {
     if ($('.actiontimer').length) {
-        actionTimer(actionend);
+        actionTimer($('.actiontimer').data('actionend'));
         setTimeout(function ac_tim() {
-            actionTimer(actionend);
+            actionTimer($('.actiontimer').data('actionend'));
             setTimeout(ac_tim, 950);
         }, 950);
     }
@@ -93,6 +87,87 @@ $(function() {
         localStorage.setItem('basket', JSON.stringify(basket));
     });
     
+    if ('.order') {
+        let point = $('.table tbody');
+        let count = 1;
+        let basket = JSON.parse(localStorage.getItem('basket'));
+        if (!basket) {
+            $('.order').addClass('empty');
+            return;
+        };
+        for (let item of basket) {
+            let hlpstr = '<tr data-id="'+item.id+'"><th scope="row" class="index">'+count+'</th><td class="name">'+item.name+'</td><td class="qty"><span class="minus">&#xe90c;</span><strong>'+item.quantity+'</strong><span class="plus">&#xe90b;</span></td><td class="price"><span>'+item.price+'</span></td><td class="sum"><span></span></td><td class="delete">&#xe90a;</td></tr>';
+            point.append(hlpstr);
+            count++;
+        }
+        orderReCount();
+        $('.table .plus').on('click', function(){
+            changeOrder(this, 1);
+        });
+        $('.table .minus').on('click', function(){
+            changeOrder(this, -1);
+        });
+        $('.table .delete').on('click', function(){
+            deleteRow(this);
+        });
+        $('.order form .submit').click(function(){
+            // убираем все отметки о неправильном заполнении от прошлой проверки, если они есть
+            $('.is-invalid').removeClass('is-invalid');
+            $('.invalid-feedback').remove();
+            let form = document.forms.orderform; // сохраняем форму в переменную
+            let valid = true; // поднимаем флаг валидности
+            if (!form.name.value) { // если поле не заполнено
+                $('form #name').addClass('is-invalid').parents('.mb-3').append('<div class="invalid-feedback">Должно быть указано имя!</div>'); // пишем о неправильном заполнении
+                valid = false; // сбрасываем флаг валидности
+            }
+            // остальные поля аналогично
+            if (!form.addr.value) {
+                $('form #addr').addClass('is-invalid').parents('.mb-3').append('<div class="invalid-feedback">Должен быть указан адрес!</div>');
+                valid = false;
+            }
+            if (!form.phone.value.match(/^((\+7)|(8))?\s?\(?\d{3}\)?\s?\d{3}\-?\d{2}\-?\d{2}$/)) {
+                $('form #phone').addClass('is-invalid').parents('.mb-3').append('<div class="invalid-feedback">Должен быть указан телефон!</div>');
+                valid = false;
+            }
+            if (valid) {
+                let products = []; // создаем упрощенный массив товаров
+                $('.table tbody tr').each(function(){
+                    let res = { // указываем только id и количество - остальное на бэке сами найдут в базе данных
+                        id: this.dataset.id,
+                        qty: +$(this).find('.qty strong').html()
+                    };
+                    products.push(res);
+                })
+                let data = { // собираем все данные для заказа
+                    name: form.name.value,
+                    phone: form.phone.value,
+                    mail: form.mail.value,
+                    addr: form.addr.value,
+                    comm: form.comm.value,
+                    date: form.date.value,
+                    order: products
+                };
+                fetch('https://jsonplaceholder.typicode.com/posts', { // отправляем заказ
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    },
+                }).then(response => response.json()).then(json => { // получаем номер заказа в json.id
+                    localStorage.removeItem('basket'); // очищаем корзину в localStorage
+                    getModalWindow('order'); // поднимаем модальное окно
+                    $('.modal').append('<p>Ваш заказ оформлен под номером ' + json.id + '.</p>'); // выводим номер заказа клиенту
+                    $('.order').addClass('empty'); // очищаем корзину на странице
+                    form.reset(); // очищаем форму
+                });
+            }
+        });
+        // $('.order .input-group .icon').click(function(){
+            // let date = new Date()
+            // makeDatePicker(`${date.getFullYear()}-${addZero(+date.getMonth() + 1)}-${addZero(+date.getDate())}`)
+        // });
+    }
+    
     
     
 });
@@ -117,6 +192,50 @@ document.addEventListener('DOMContentLoaded', function() {
     
 });
 */
+
+/* order */
+function deleteRow(point) {
+    $(point).parents('tr').remove();
+    saveBasket();
+    if ($('tbody tr').length) {
+        orderReCount();
+    } else {
+        $('.order').addClass('empty');
+    }
+}
+function saveBasket() {
+    basket = [];
+    $('.order table tr[data-id]').each(function() {
+        let hlp = {
+            id: $(this).data('id'),
+            name: $(this).find('.name').html(),
+            price: $(this).find('.price span').html(),
+            quantity: $(this).find('.qty strong').html()
+        }
+        basket.push(hlp);
+    });
+    localStorage.setItem('basket', JSON.stringify(basket));
+}
+function orderReCount() {
+    let sum = 0;
+    $('.order table tr[data-id]').each(function() {
+        let hlp = $(this).find('.qty strong').html() * $(this).find('.price span').html();
+        sum += hlp;
+        $(this).find('.sum span').html(hlp);
+    });
+    $('.order .allsum span').html(sum);
+}
+function changeOrder(place, delta) {
+    let hlp = +$(place).parents('td').find('strong').html() + delta;
+    if (hlp <= 0) {
+        deleteRow(place);
+        return;
+    } else {
+        $(place).parents('td').find('strong').html(hlp);
+    }
+    saveBasket();
+    orderReCount();
+}
 
 /* action timer */
 function actionTimer(end) {
@@ -197,5 +316,3 @@ function getModalWindow(idname) {
 function dropModalWindow() {
     $('.screener, .modal').remove();
 }
-
-

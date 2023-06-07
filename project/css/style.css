@@ -1,10 +1,9 @@
 @font-face {
-  font-family: 'icomoon';
-  src:
-    url('../fonts/icomoon.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
 }
 
 /* global reset */
@@ -599,6 +598,9 @@ section.action {
     background: white;
     border-radius: 10px;
     padding: 40px;
+    display: block;
+    width: auto;
+    height: auto;
 }
 .modal .close {
     position: absolute;
@@ -627,9 +629,75 @@ section.action {
     opacity: 1;
 }
 
-
-
-
+/* order */
+.order .empty,
+.empty section {
+    display: none;
+}
+.empty .empty {
+    display: block;
+}
+.table tfoot th {
+    border-bottom: none;
+}
+.table .allsum span {
+    color: #f00;
+}
+.table .price span::after,
+.table .sum span::after,
+.table .allsum span::after {
+    content: '\20BD';
+    margin-left: 8px;
+}
+.table .index {
+    text-align: center;
+    width: 50px;
+}
+.table .qty {
+    text-align: center;
+    width: 200px;
+}
+.table .price {
+    text-align: center;
+    width: 100px;
+    font-size: 20px;
+    line-height: 20px;
+}
+.table .sum {
+    text-align: center;
+    width: 100px;
+    font-size: 20px;
+    line-height: 20px;
+}
+.table td.delete {
+    text-align: center;
+    width: 100px;
+    cursor: pointer;
+}
+.table .qty strong {
+    min-width: 100px;
+    text-align: center;
+    display: inline-block;
+    user-select: none;
+    font-size: 20px;
+    line-height: 20px;
+}
+.table .qty span {
+    color: #00f;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+.table .qty .minus {
+    margin-right: 16px;
+}
+.table .qty .plus {
+    margin-left: 16px;
+}
 
 
 
