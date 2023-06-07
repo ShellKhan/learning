@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Examples</title>
+        
+        <meta charset="utf-8">
+        
+        <script src="jquery-3.7.0.min.js"></script>
+    </head>
+    
+    <body>
+        <div id="aim"></div>
+        
+        <script>
+            /*
+            let xhr = new XMLHttpRequest();
+            
+            xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1')
+            
+            xhr.onload = function() {
+                console.log('Получилось!');
+                //console.dir(xhr);
+                let res = JSON.parse(xhr.response);
+                //console.log(res);
+                for (item of res) {
+                    let hlp = document.createElement('p');
+                    hlp.innerHTML = `User ${item.id} said: ${item.body}`;
+                    document.getElementById('aim').append(hlp);
+                    //console.log(item.userId);
+                    //console.log(item.id);
+                    //console.log(item.body);
+                    //console.log(item.title);
+                }
+                document.getElementById('aim').innerHTML = '<h2>' + res.title + '</h2><p>' + res.body + '</p>';
+            };
+            
+            xhr.onerror = function() {
+                console.log('Ничего не получилось...');
+            };
+            
+            xhr.onprogress = function(event) { // запускается периодически
+                // event.loaded - количество загруженных байт
+                // event.lengthComputable = равно true, если сервер присылает заголовок Content-Length
+                // event.total - количество байт всего (только если lengthComputable равно true)
+                console.log('Идет загрузка...');
+            };
+            
+            xhr.send();
+            
+            console.log('Процесс пошел...');
+            */
+            /*
+            $.ajax({
+                method: 'POST',
+                url: 'https://jsonplaceholder.typicode.com/posts',
+                data: JSON.stringify({
+                    title: 'string',
+                    text: 'testing jquery ajax'
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+                complete: function(data) {
+                    console.log('Получилось!');
+                    //document.getElementById('aim').innerHTML = data.responseText;
+                    for (key in data.responseJSON) {
+                        document.getElementById('aim').insertAdjacentHTML('beforeend', `<p><strong>${key}</strong>: ${data.responseJSON[key]}`);
+                    }
+                },
+                error:  function(err) {
+                    console.log('Ничего не получилось...');
+                    console.log(err);
+                }
+            });
+            console.log('Процесс пошел...');
+            */
+            
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                body: JSON.stringify({
+                    title: 'title string',
+                    text: 'testing jquery ajax'
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+            .then(response => {
+                console.log('Получилось!');
+                return response.json();
+            })
+            .then(json => {
+                for (key in json) {
+                    document.getElementById('aim').insertAdjacentHTML('beforeend', `<p><strong>${key}</strong>: ${json[key]}`);
+                }
+            });
+            console.log('Процесс пошел...');
+            
+        </script>
+    </body>
+</html>

@@ -71,8 +71,17 @@ $(function() {
             price: $(this).parents('.idtovar').find('.price').html(),
             quantity: 1
         }
-        // здесь должна быть отправка сведений о товаре на бэк-энд, но мы ее не делаем
-        // зато мы можем передать эти сведения в корзину
+        // здесь должна быть отправка сведений о товаре на бэк-энд, мы ее делаем фейковой
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify(tovar),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then(response => response.json())
+        .then(json => console.log(json));
+        // реально же мы передаем эти сведения в корзину через localStorage
         let basket = JSON.parse(localStorage.getItem('basket'));
         if (!basket) basket = [];
         let idx = basket.findIndex(item => item.id == tovar.id);
@@ -82,8 +91,6 @@ $(function() {
             basket[idx].quantity += tovar.quantity;
         }
         localStorage.setItem('basket', JSON.stringify(basket));
-        console.log(localStorage.getItem('basket'));
-        console.log(JSON.parse(localStorage.getItem('basket')));
     });
     
     
