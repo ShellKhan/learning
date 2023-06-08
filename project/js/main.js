@@ -87,7 +87,7 @@ $(function() {
         localStorage.setItem('basket', JSON.stringify(basket));
     });
     
-    if ('.order') {
+    if ($('.order').length) {
         let point = $('.table tbody');
         let count = 1;
         let basket = JSON.parse(localStorage.getItem('basket'));
@@ -163,6 +163,7 @@ $(function() {
             }
         });
         
+        /*
         // подключение готового дейтпикера из библиотеки jquery-ui
         $('#date').datepicker({dateFormat: "yy-mm-dd"});
         $('#datepicker').on('click', function(){
@@ -172,15 +173,10 @@ $(function() {
                 $(this).datepicker('show');
             }
         });
+        */
         
-        // $('.order .input-group .icon').click(function(){
-            // let date = new Date()
-            // makeDatePicker(`${date.getFullYear()}-${addZero(+date.getMonth() + 1)}-${addZero(+date.getDate())}`)
-        // });
+        makeDatepicker($('#datepicker, #date'), $('#date'));
     }
-    
-    
-    
 });
 /*
 document.addEventListener('DOMContentLoaded', function() {
