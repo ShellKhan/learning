@@ -162,6 +162,17 @@ $(function() {
                 });
             }
         });
+        
+        // подключение готового дейтпикера из библиотеки jquery-ui
+        $('#date').datepicker({dateFormat: "yy-mm-dd"});
+        $('#datepicker').on('click', function(){
+            if ($('#ui-datepicker-div').is(':visible')) {
+                $(this).datepicker('hide');
+            } else {
+                $(this).datepicker('show');
+            }
+        });
+        
         // $('.order .input-group .icon').click(function(){
             // let date = new Date()
             // makeDatePicker(`${date.getFullYear()}-${addZero(+date.getMonth() + 1)}-${addZero(+date.getDate())}`)

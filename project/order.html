@@ -7,15 +7,19 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
+        <link rel="stylesheet" href="css/jquery-ui.min.css">
+        
         <link rel="stylesheet" href="css/bootstrap.min.css">
         
         <link rel="stylesheet" href="css/style.css">
         
-        <script defer src="js/jquery-3.7.0.min.js"></script>
+        <script src="js/jquery-3.7.0.min.js"></script>
         
-        <script defer src="js/bootstrap.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
         
-        <script defer src="js/main.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        
+        <script src="js/main.js"></script>
     </head>
     
     <body>
@@ -86,7 +90,7 @@
                     <label for="date" class="form-label">Желаемая дата доставки</label>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" id="date" name="date" readonly>
-                        <button class="btn btn-outline-secondary icon" type="button">&#xe909;</button>
+                        <button class="btn btn-outline-secondary icon" id="datepicker" type="button">&#xe909;</button>
                     </div>
                     <div class="mb-3">
                         <label for="comm" class="form-label">Комментарий</label>
