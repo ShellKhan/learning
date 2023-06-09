@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+  </head>
+  <body>
+<script src="vue.3.3.4.js"></script>
+<div id="app">
+    <p><b>{{ message.toUpperCase() }}</b></p>
+    <p><b>{{ message_eng }}</b></p>
+    <p><input type="text" v-model="message_eng"></p>
+</div>
+<script>
+  const { createApp } = Vue
+
+  createApp({
+    data() {
+      return {
+        message: 'Привет!',
+        message_eng: 'Hello!'
+      }
+    }
+  }).mount('#app')
+</script>
+  </body>
+</html>
