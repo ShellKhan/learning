@@ -8,6 +8,12 @@ $(function() {
     }
     
     $('.slider').each(function() {
+        let w = document.documentElement.clientWidth;
+        let w_img = $('.slide').width();
+        let h_img = $('.slide').height();
+        let h = w * h_img / w_img;
+        $('.sliderwindow').css({height: h + 'px', width: w + 'px'});
+        
         makeSlider($(this));
     });
     
@@ -87,12 +93,12 @@ $(function() {
         localStorage.setItem('basket', JSON.stringify(basket));
     });
     
-    if ($('.order').length) {
+    if ($('main.order').length) {
         let point = $('.table tbody');
         let count = 1;
         let basket = JSON.parse(localStorage.getItem('basket'));
         if (!basket) {
-            $('.order').addClass('empty');
+            $('main.order').addClass('empty');
             return;
         };
         for (let item of basket) {
@@ -110,7 +116,7 @@ $(function() {
         $('.table .delete').on('click', function(){
             deleteRow(this);
         });
-        $('.order form .submit').click(function(){
+        $('main.order form .submit').click(function(){
             // убираем все отметки о неправильном заполнении от прошлой проверки, если они есть
             $('.is-invalid').removeClass('is-invalid');
             $('.invalid-feedback').remove();
@@ -157,7 +163,7 @@ $(function() {
                     localStorage.removeItem('basket'); // очищаем корзину в localStorage
                     getModalWindow('order'); // поднимаем модальное окно
                     $('.modal').append('<p>Ваш заказ оформлен под номером ' + json.id + '.</p>'); // выводим номер заказа клиенту
-                    $('.order').addClass('empty'); // очищаем корзину на странице
+                    $('main.order').addClass('empty'); // очищаем корзину на странице
                     form.reset(); // очищаем форму
                 });
             }
@@ -175,6 +181,11 @@ $(function() {
         });
         */
         
+        /*
+        let field = $('#date');
+        let today = new Date();
+        field.val(`${today.getFullYear()}-${addZero(today.getMonth() + 1)}-${addZero(today.getDate())}`);
+        */
         makeDatepicker($('#datepicker, #date'), $('#date'));
     }
 });
@@ -207,17 +218,17 @@ function deleteRow(point) {
     if ($('tbody tr').length) {
         orderReCount();
     } else {
-        $('.order').addClass('empty');
+        $('main.order').addClass('empty');
     }
 }
 function saveBasket() {
     basket = [];
-    $('.order table tr[data-id]').each(function() {
+    $('main.order table tr[data-id]').each(function() {
         let hlp = {
             id: $(this).data('id'),
             name: $(this).find('.name').html(),
             price: $(this).find('.price span').html(),
-            quantity: $(this).find('.qty strong').html()
+            quantity: +$(this).find('.qty strong').html()
         }
         basket.push(hlp);
     });
@@ -225,12 +236,12 @@ function saveBasket() {
 }
 function orderReCount() {
     let sum = 0;
-    $('.order table tr[data-id]').each(function() {
+    $('main.order table tr[data-id]').each(function() {
         let hlp = $(this).find('.qty strong').html() * $(this).find('.price span').html();
         sum += hlp;
         $(this).find('.sum span').html(hlp);
     });
-    $('.order .allsum span').html(sum);
+    $('main.order .allsum span').html(sum);
 }
 function changeOrder(place, delta) {
     let hlp = +$(place).parents('td').find('strong').html() + delta;

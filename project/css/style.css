@@ -202,8 +202,10 @@ section.action {
     background: pink;
 }
 .slide {
-    width: 450px;
-    height: 600px;
+    /* width: 450px; */
+    width: 100%;
+    /* height: 600px; */
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
