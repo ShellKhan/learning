@@ -135,6 +135,9 @@ header .middle {
 .topmenu a:not(.current):hover span {
     text-decoration: underline;
 }
+.valute {
+    color: yellow;
+}
 
 /* footer */
 footer .top {

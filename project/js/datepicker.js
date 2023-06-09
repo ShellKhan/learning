@@ -91,6 +91,14 @@ function makeDatepicker(point, field) {
         });
         $('.dp_range').on('click', function() { // фиксируем выбранную дату и вызываем функцию уборки дейтпикера
             selectedday = new Date(year, month, this.innerHTML);
+            //if (selectedday.getTime() < today.getTime()) selectedday = today;
+            /*
+            let hlpday = new Date(year, month, this.innerHTML);
+            if (hlpday.getTime() < today.getTime()) {
+                return;
+            }
+            selectedday = hlpday;
+            */
             dropDatepicker();
         });
     }

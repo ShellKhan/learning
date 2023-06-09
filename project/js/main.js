@@ -5,6 +5,9 @@ $(function() {
             actionTimer($('.actiontimer').data('actionend'));
             setTimeout(ac_tim, 950);
         }, 950);
+        getCurrency1();
+        getCurrency2();
+        getCurrency3();
     }
     
     $('.slider').each(function() {
@@ -232,7 +235,11 @@ function saveBasket() {
         }
         basket.push(hlp);
     });
-    localStorage.setItem('basket', JSON.stringify(basket));
+    if (basket.length) {
+        localStorage.setItem('basket', JSON.stringify(basket));
+    } else {
+        localStorage.removeItem('basket');
+    }
 }
 function orderReCount() {
     let sum = 0;
